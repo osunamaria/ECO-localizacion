@@ -1,0 +1,52 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+table {
+    width: 20%;
+    margin-left: 40%;
+    margin-top: 3%;
+    font-size: 1.1em;
+    margin-bottom: 2%;
+}
+
+td {
+    padding: 3%;
+}
+
+.opcion {
+    display: flex;
+    width: 22%;
+    margin-left: 40%;
+    justify-content: space-between;
+}
+
+h1:hover {
+    cursor: pointer;
+}
+
+.subrayado {
+    border-bottom: 1px solid black;
+}
+
+.oculto {
+    display: none;
+}
+
+input[type=submit] {
+    margin-left: 40%;
+    font-size: 0.9em;
+}
+
+.formIni input[type=text] {
+    margin-left: 30%;
+}
+
+.formIni input[type=password]{
+    margin-left: 30%;
+}
+
+.segundoBoton {
+    margin-bottom: 81.4%;
+}

@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    text-align: center;
+}
+
+.guardar{
+    background-color: transparent;
+    border: solid 1px #6f7484;
+    border-radius: 10%;
+}
+.guardar:hover{
+    background-color: transparent;
+    border: solid 1px #f99804;
+    border-radius: 10%;
+    color: #f99804;
+}
+
+.eventoNoticia{
+    visibility: hidden;
+}
+
+article{
+    text-align: center;
+}
+
+table {
+    width: 20%;
+    margin-left: 40%;
+    margin-top: 3%;
+    font-size: 1.1em;
+    text-align: center;
+}
+
+td {
+    padding: 3%;
+}

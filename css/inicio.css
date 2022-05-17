@@ -3,10 +3,31 @@
     padding: 0;
 }
 
+/* body{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+} */
+
 nav {
     margin-bottom: 5em;
 }
 
-b {
-    color: orange;
+
+h3{
+    font-family: 'Calligraffitti', cursive;
+    font-weight: bold;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-left: 1rem;
+}
+
+p{
+    margin-bottom: 2rem;
+}
+
+.tamano{
+    font-size:7rem;
+    color: #208f5b;
+    /* color: #d3b04d; */
 }

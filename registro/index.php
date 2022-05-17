@@ -14,7 +14,6 @@
 
     <!-- links css -->
     <link rel="stylesheet" href="../css/headers.css">
-    <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/registro.css">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
@@ -28,7 +27,7 @@
 </head>
 
 <body>
-<div class="container">
+    <div class="container">
         <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
             <a href="../index.php" class="me-md-auto">
                 <span class="fs-4"><img src="../img/logoOriginal.png" class="img-fluid"></span>

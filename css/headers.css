@@ -30,3 +30,8 @@
 .dropdown-toggle {
   outline: 0;
 }
+
+.logo{
+  width:8rem;
+  height: 5rem;
+}

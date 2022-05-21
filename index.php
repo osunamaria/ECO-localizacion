@@ -19,7 +19,6 @@
 
     <!-- links css -->
     <link rel="stylesheet" href="css/headers.css">
-    <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/inicio.css">
     <title>Inicio</title>
 </head>
@@ -93,25 +92,27 @@
         </article>
     </section>
     
-    <footer class="d-flex border-top text-white pie">
+                    <!-- añadir un section más con un video o algo asi -->
+
+    <footer class="d-flex text-white cabecera">
         <div class="container-fluid py-3">
             <div class="row justify-content-around align-items-center text-center">
 
-                <div class="col-4">
+                <div class="col-xl-4 col-sm-12">
                     <ul class="d-flex lista justify-content-around align-items-center">
-                        <li>Política de privacidad</li>
-                        <li>Política de cookies</li>
-                        <li>Contacto</li>
+                        <li><a class="text-decoration-none text-white" href="politica/privacidad.html">Política de privacidad</a></li>
+                        <li><a class="text-decoration-none text-white" href="politica/cookies.html">Política de cookies</a></li>
+                        <li><a class="text-decoration-none text-white" href="politica/contacto.html">Contacto</a></li>
                     </ul>
                 </div>
 
-                <div class="col-4">
+                <div class="col-xl-4 col-sm-12">
                     <a href="index.php" class="text-decoration-none">
                         <h3 class="text-white text-center">ECO-localización</h3>
                     </a>
                 </div>
 
-                <div class="col-4 mt-4">
+                <div class="col-xl-4 mt-4 col-sm-12">
                     <p>© ECO-localización, todos los derechos reservados</p>
                 </div>
 

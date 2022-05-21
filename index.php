@@ -85,10 +85,16 @@
             a la vez que la gente que quiere productos ecológicos tenga acceso a estos por un precio más asequible.</p>
         </article>
         <hr class="container">
+        <article class="container">
+            <h3>Nuestra filosofía de venta</h3>
+            <p>En ECO-localización hemos creado un nuevo tipo de venta más cercana con el cliente, de forma que no solo pueda conocer el producto sino también al vendedor 
+                y podrá darle su opinión no solo en nuestra web sino también en persona. ECO-localización busca fomentar el mercado local, de esta forma el pago se realiza a través 
+                de la plataforma, mientras que la entrega se acordará entre el cliente y el vendedor.</p>
+        </article>
     </section>
     
     <footer class="d-flex border-top text-white">
-        <div class="container-fluid">
+        <div class="container-fluid py-3">
             <div class="row justify-content-around align-items-center text-center">
 
                 <div class="col-4">
@@ -99,15 +105,13 @@
                     </ul>
                 </div>
 
-                <div class="col-4 border border-primary">
-                    <div class="col-md-4 d-flex align-items-center">
-                        <a href="index.php" class="text-decoration-none">
-                            <h3 class="marcaFooter text-white">ECO-localización</h3>
-                        </a>
-                    </div>
+                <div class="col-4">
+                    <a href="index.php" class="text-decoration-none">
+                        <h3 class="text-white text-center">ECO-localización</h3>
+                    </a>
                 </div>
 
-                <div class="col-4">
+                <div class="col-4 mt-4">
                     <p>© ECO-localización, todos los derechos reservados</p>
                 </div>
 

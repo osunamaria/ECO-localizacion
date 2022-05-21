@@ -1,12 +1,5 @@
 /* Footer */
 
-footer {
+.pie {
     background-color: rgb(46, 46, 46);
-    color: #929292;
-    margin-top: 3em;
-}
-
-.logoFooter{
-    height: 150%;
-    width: 150%;
 }

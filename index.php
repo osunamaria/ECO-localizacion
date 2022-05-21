@@ -93,7 +93,7 @@
         </article>
     </section>
     
-    <footer class="d-flex border-top text-white">
+    <footer class="d-flex border-top text-white pie">
         <div class="container-fluid py-3">
             <div class="row justify-content-around align-items-center text-center">
 

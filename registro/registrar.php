@@ -54,26 +54,30 @@
             }else if($num_miembros>10){
                 $cuota=90;
             }
-            $con = new PDO("mysql:host=" . $GLOBALS['servidor'] . ";dbname=" . $GLOBALS['baseDatos'], $GLOBALS['user'], $GLOBALS['pass']);
-            $sql = $con->prepare("INSERT into socios values(null, :usuario , :contrasena , :nombre , :apellidos , :dni , 'socio' , :correo , :telefono ,:fecnac , :num_miembros , :cuota, '0')");
-            $sql->bindParam(":usuario", $usuario);
-            $sql->bindParam(":contrasena", $contrasena);
-            $sql->bindParam(":nombre", $nombre);
-            $sql->bindParam(":apellidos", $apellidos);
-            $sql->bindParam(":dni", $dni);
-            $sql->bindParam(":correo", $correo);
-            $sql->bindParam(":telefono", $telefono);
-            $sql->bindParam(":fecnac", $fecnac);
-            $sql->bindParam(":num_miembros", $num_miembros);
-            $sql->bindParam(":cuota", $cuota);
-            $sql->execute();
-            $id = $con->lastInsertId();
-            $con = null;
-            if ($id != 0) {
-                header("Location: ../index.php");
-            } else {
-                echo "Datos incorrectos<br><br>";
-                echo "<a href='index.php'>[Volver]</a>";
+            $sql = $con->prepare("SELECT * from clientes WHERE nombre = $nombre;");
+            $sql2 = $con->prepare("SELECT * from vendedores WHERE nombre = $nombre;");
+            if($sql == null && $sql2 == null){
+                $con = new PDO("mysql:host=" . $GLOBALS['servidor'] . ";dbname=" . $GLOBALS['baseDatos'], $GLOBALS['user'], $GLOBALS['pass']);
+                $sql = $con->prepare("INSERT into clientes values(null, :usuario , :contrasena , :nombre , :apellidos , :dni , 'socio' , :correo , :telefono ,:fecnac , :num_miembros , :cuota, '0')");
+                $sql->bindParam(":usuario", $usuario);
+                $sql->bindParam(":contrasena", $contrasena);
+                $sql->bindParam(":nombre", $nombre);
+                $sql->bindParam(":apellidos", $apellidos);
+                $sql->bindParam(":dni", $dni);
+                $sql->bindParam(":correo", $correo);
+                $sql->bindParam(":telefono", $telefono);
+                $sql->bindParam(":fecnac", $fecnac);
+                $sql->bindParam(":num_miembros", $num_miembros);
+                $sql->bindParam(":cuota", $cuota);
+                $sql->execute();
+                $id = $con->lastInsertId();
+                $con = null;
+                if ($id != 0) {
+                    header("Location: ../index.php");
+                } else {
+                    echo "Datos incorrectos<br><br>";
+                    echo "<a href='index.php'>[Volver]</a>";
+                }
             }
         } catch (PDOException $e) {
             header("location: ../php/error.php");

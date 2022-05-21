@@ -10,11 +10,10 @@
     <!-- linkear con fuente belleza -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Belleza&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Calligraffitti&display=swap" rel="stylesheet">
 
     <!-- links css -->
     <link rel="stylesheet" href="../css/headers.css">
-    <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/registro.css">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
 
@@ -27,23 +26,24 @@
 </head>
 
 <body>
-    <div class="container">
-        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-            <a href="../index.php" class="me-md-auto">
-                <span class="fs-4"><img src="../img/logoOriginal.png" class="img-fluid"></span>
+    <div class="container-fluid">
+        <header class="d-flex flex-wrap justify-content-center py-3 border-bottom cabecera">
+            <a href="index.php" class="me-md-auto ms-5">
+                <img src="../img/Captura-removebg-preview.png" class="logo">
             </a>
 
             <ul class="nav nav-pills mt-4">
-                <li class="nav-item"><a href="../index.php" class="nav-link text-secondary">Inicio</a></li>
-                <li class="nav-item"><a href="../publicaciones/index.php" class="nav-link text-secondary">Publicaciones</a></li>
+                <li class="nav-item"><a href="../index.php" class="nav-link text-white">Inicio</a></li>
+                <li class="nav-item"><a href="../productos/index.php" class="nav-link text-white">Productos</a></li>
+                <li class="nav-item"><a href="../vendedores/index.php" class="nav-link text-white">Vendedores</a></li>
             </ul>
         </header>
     </div>
     <section>
         <article>
-            <div class="opcion">
-                <h1 id="registro" class="subrayado">Reg&iacute;strate</h1>
-                <h1 id="inicio">Inicia sesi&oacute;n</h1>
+            <div class="opcion mt-5">
+                <h3 id="registro" class="subrayado">Reg&iacute;strate</h3>
+                <h3 id="inicio">Inicia sesi&oacute;n</h3>
             </div>
         </article>
         <article>
@@ -105,22 +105,7 @@
                             <input type="tel" name="telefono" id="telefono" length="9" required>
                         </td>
                     </tr>
-                    <tr>
-                        <td>
-                            <label for="fecnac">Fecha de nacimiento</label>
-                        </td>
-                        <td>
-                            <input type="date" name="fecnac" id="fecnac" required>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="num_miembros">Miembros de la familia</label>
-                        </td>
-                        <td>
-                            <input type="number" name="num_miembros" id="num_miembros" min="1" required>
-                        </td>
-                    </tr>
+                    <!-- rol vendedor o cliente -->
                     <tr>
                         <td colspan="2">
                             <input type="submit" value="Enviar">
@@ -150,27 +135,13 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <input type="submit" value="Enviar" class="segundoBoton">
+                            <input type="submit" value="Enviar">
                         </td>
                     </tr>
                 </table>
             </form>
         </article>
     </section>
-    <footer class="d-flex flex-wrap justify-content-center align-items-center py-3 mt-4 border-top position-absolute top-100 w-100">
-        <div class="col-md-4 d-flex align-items-center">
-            <a href="../index.php" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
-                <img src="../img/logoNaranja.png" alt="logo">
-            </a>
-            <span class="text-muted">&copy; 2021 Company, Inc</span>
-        </div>
-
-        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex fs-1">
-            <li class="m-5"><i class="fab fa-instagram"></i></li>
-            <li class="m-5"><i class="fab fa-twitter"></i></li>
-            <li class="m-5"><i class="fab fa-facebook-square"></i></li>
-        </ul>
-    </footer>
     <script src="../js/bootstrap.bundle.min"></script>
 </body>
 

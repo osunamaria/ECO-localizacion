@@ -15,14 +15,6 @@ nav {
     height: 25rem;
 }
 
-h3{
-    font-family: 'Calligraffitti', cursive;
-    font-weight: bold;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    margin-left: 1rem;
-}
-
 p{
     margin-bottom: 2rem;
 }
@@ -32,8 +24,4 @@ p{
     color: white;
     /* color: #208f5b; */
     /* color: #d3b04d; */
-}
-
-.lista{
-    list-style: none;
 }

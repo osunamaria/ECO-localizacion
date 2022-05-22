@@ -92,7 +92,18 @@
         </article>
     </section>
     
-                    <!-- añadir un section más con un video o algo asi -->
+    <section>
+        <article>
+            <div class="container-fluid pregunta mb-3 py-3">
+                <div class="container">
+                    <h3>¿Quieres ser vendedor?</h3>
+                    <p>Para ser vendedor deberas ponerte en contacto con nosotros y demostrar que tienes los medios para serlo. Deberás rellenar un formulario y enviarnos 
+                    la documentación que se pide. En ECO-localización llevamos un estricto seguimiento de nuestros vendedores y de su fiabilidad para nuestros clientes queden satisfechos 
+                    y podamos solucionar rápida y efectivamente los posibles problemas que puedan surgir.</p>
+                </div>
+            </div>
+        </article>
+    </section>
 
     <footer class="d-flex text-white cabecera">
         <div class="container-fluid py-3">

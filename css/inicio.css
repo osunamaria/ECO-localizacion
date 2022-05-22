@@ -19,6 +19,10 @@ p{
     margin-bottom: 2rem;
 }
 
+.pregunta{
+    background-color: #208f5b;
+}
+
 .tamano{
     font-size:7rem;
     color: white;

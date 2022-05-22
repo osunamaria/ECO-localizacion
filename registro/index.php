@@ -105,7 +105,6 @@
                             <input type="tel" name="telefono" id="telefono" length="9" required>
                         </td>
                     </tr>
-                    <!-- rol vendedor o cliente -->
                     <tr>
                         <td colspan="2">
                             <input type="submit" value="Enviar">

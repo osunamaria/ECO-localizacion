@@ -24,49 +24,47 @@
 </head>
 
 <body>
-    <div class="container-fluid">
-        <header class="d-flex flex-wrap justify-content-center py-3 mb-3 border-bottom cabecera">
-            <a href="index.php" class="me-md-auto ms-5">
-                <img src="img/Captura-removebg-preview.png" class="logo">
-            </a>
+    <header class="d-flex flex-wrap justify-content-center py-3 cabecera">
+        <a href="index.php" class="me-md-auto ms-5">
+            <img src="img/Captura-removebg-preview.png" class="logo">
+        </a>
 
-            <ul class="nav nav-pills mt-4">
-                <li class="nav-item"><a href="index.php" class="nav-link text-white">Inicio</a></li>
-                <li class="nav-item"><a href="productos/index.php" class="nav-link text-white">Productos</a></li>
-                <li class="nav-item"><a href="vendedores/index.php" class="nav-link text-white">Vendedores</a></li>
-                <?php
-                    // Continuar la sesión
-                    session_start();
+        <ul class="nav nav-pills mt-4">
+            <li class="nav-item"><a href="index.php" class="nav-link text-white">Inicio</a></li>
+            <li class="nav-item"><a href="productos/index.php" class="nav-link text-white">Productos</a></li>
+            <li class="nav-item"><a href="vendedores/index.php" class="nav-link text-white">Vendedores</a></li>
+            <?php
+                // Continuar la sesión
+                session_start();
 
-                    if(isset($_SESSION['sesion_iniciada']) == true ){
-                        $tipo = session_id();
-                        if($tipo=="vendedor"){
-                            echo "<li class='nav-item'><a href='ventas/index.php' class='nav-link text-white'>Ventas</a></li>";
-                            echo "<li class='nav-item'><a href='administracion_productos/index.php' class='nav-link text-white'>Administrar productos</a></li>";
-                        }
-                        if($tipo=="administrador"){
-                            echo "<li class='nav-item dropdown'>";
-                                echo "<a class='nav-link dropdown-toggle text-white' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>";
-                                    echo "Gestiones";
-                                echo "</a>";
-                                echo "<ul class='dropdown-menu' aria-labelledby='navbarDropdown'>";
-                                    echo "<li><a class='dropdown-item' href='gestion_cuentas/index.php'>Usuarios</a></li>";
-                                    echo "<li><a class='dropdown-item' href='gestion_publicaciones/index.php'>Publicaciones</a></li>";
-                                    echo "<li><a class='dropdown-item' href='ventas/index.php'>Ventas</a></li>";
-                                    echo "<li><a class='dropdown-item' href='atencion_cliente/index.php'>Atención al cliente</a></li>";
-                                echo "</ul>";
-                            echo "</li>";
-                        }
-                        echo "<li class='nav-item me-md-auto'><a href='cerrarSesion.php' class='nav-link active bg-secondary rounded-pill me-5' aria-current='page'>Cerrar sesión</a></li>";
-                    }else{
-                        echo "<li class='nav-item me-md-auto'><a href='registro/index.php' class='nav-link active bg-success rounded-pill me-5' aria-current='page'>Entrar</a></li>";
-                    }//Fin si
-                ?>
-            </ul>
-        </header>
-    </div>
+                if(isset($_SESSION['sesion_iniciada']) == true ){
+                    $tipo = session_id();
+                    if($tipo=="vendedor"){
+                        echo "<li class='nav-item'><a href='ventas/index.php' class='nav-link text-white'>Ventas</a></li>";
+                        echo "<li class='nav-item'><a href='administracion_productos/index.php' class='nav-link text-white'>Administrar productos</a></li>";
+                    }
+                    if($tipo=="administrador"){
+                        echo "<li class='nav-item dropdown'>";
+                            echo "<a class='nav-link dropdown-toggle text-white' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>";
+                                echo "Gestiones";
+                            echo "</a>";
+                            echo "<ul class='dropdown-menu' aria-labelledby='navbarDropdown'>";
+                                echo "<li><a class='dropdown-item' href='gestion_cuentas/index.php'>Usuarios</a></li>";
+                                echo "<li><a class='dropdown-item' href='gestion_publicaciones/index.php'>Publicaciones</a></li>";
+                                echo "<li><a class='dropdown-item' href='ventas/index.php'>Ventas</a></li>";
+                                echo "<li><a class='dropdown-item' href='atencion_cliente/index.php'>Atención al cliente</a></li>";
+                            echo "</ul>";
+                        echo "</li>";
+                    }
+                    echo "<li class='nav-item me-md-auto'><a href='cerrarSesion.php' class='nav-link active bg-secondary rounded-pill me-5' aria-current='page'>Cerrar sesión</a></li>";
+                }else{
+                    echo "<li class='nav-item me-md-auto'><a href='registro/index.html' class='nav-link active bg-success rounded-pill me-5' aria-current='page'>Entrar</a></li>";
+                }//Fin si
+            ?>
+        </ul>
+    </header>
 
-    <section class="container-fluid">
+    <section>
         <article class="d-flex justify-content-around align-items-center fondo">
             <h3 class="tamano">ECO-localización</h3>
         </article>
@@ -94,12 +92,13 @@
     
     <section>
         <article>
-            <div class="container-fluid pregunta mb-3 py-3">
+            <div class="container-fluid pregunta py-3">
                 <div class="container">
                     <h3>¿Quieres ser vendedor?</h3>
                     <p>Para ser vendedor deberas ponerte en contacto con nosotros y demostrar que tienes los medios para serlo. Deberás rellenar un formulario y enviarnos 
                     la documentación que se pide. En ECO-localización llevamos un estricto seguimiento de nuestros vendedores y de su fiabilidad para nuestros clientes queden satisfechos 
                     y podamos solucionar rápida y efectivamente los posibles problemas que puedan surgir.</p>
+                      <a href='nuevoVendedor/nuevoVendedor.php' class='btn btn-default boton text-white rounded-pill mb-3' aria-current='page'>Empieza a vender tus productos</a>
                 </div>
             </div>
         </article>
@@ -111,9 +110,9 @@
 
                 <div class="col-xl-4 col-sm-12">
                     <ul class="d-flex lista justify-content-around align-items-center">
-                        <li><a class="text-decoration-none text-white" href="politica/privacidad.html">Política de privacidad</a></li>
-                        <li><a class="text-decoration-none text-white" href="politica/cookies.html">Política de cookies</a></li>
-                        <li><a class="text-decoration-none text-white" href="politica/contacto.html">Contacto</a></li>
+                        <li><a class="text-decoration-none text-white" href="politica/privacidad.php">Política de privacidad</a></li>
+                        <li><a class="text-decoration-none text-white" href="politica/cookies.php">Política de cookies</a></li>
+                        <li><a class="text-decoration-none text-white" href="politica/contacto.php">Contacto</a></li>
                     </ul>
                 </div>
 

@@ -21,10 +21,9 @@ td:nth-child(even){
 
 .opcion {
     display: flex;
-    width: 100%;
-    /* margin-left: 30%; */
+    width: 24.5%;
+    margin-left: 37%;
     justify-content: space-between;
-    background-color: lawngreen;
 }
 
 h3:hover {
@@ -43,11 +42,3 @@ input[type=submit] {
     margin-left: 40%;
     font-size: 0.9em;
 }
-
-/* .formIni input[type=text] {
-    margin-left: 30%;
-}
-
-.formIni input[type=password]{
-    margin-left: 30%;
-} */

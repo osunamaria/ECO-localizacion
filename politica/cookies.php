@@ -19,7 +19,7 @@
 
     <!-- links css -->
     <link rel="stylesheet" href="../css/headers.css">
-    <link rel="stylesheet" href="../css/privicidad.css">
+    <link rel="stylesheet" href="../css/privacidad.css">
     <title>Inicio</title>
 </head>
 
@@ -56,9 +56,9 @@
                             echo "</ul>";
                         echo "</li>";
                     }
-                    echo "<li class='nav-item me-md-auto'><a href='cerrarSesion.php' class='nav-link active bg-secondary rounded-pill me-5' aria-current='page'>Cerrar sesión</a></li>";
+                    echo "<li class='nav-item me-md-auto'><a href='../cerrarSesion.php' class='nav-link active bg-secondary rounded-pill me-5' aria-current='page'>Cerrar sesión</a></li>";
                 }else{
-                    echo "<li class='nav-item me-md-auto'><a href='registro/index.html' class='nav-link active bg-success rounded-pill me-5' aria-current='page'>Entrar</a></li>";
+                    echo "<li class='nav-item me-md-auto'><a href='../registro/index.html' class='nav-link active bg-success rounded-pill me-5' aria-current='page'>Entrar</a></li>";
                 }//Fin si
             ?>
         </ul>

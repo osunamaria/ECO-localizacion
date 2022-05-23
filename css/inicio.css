@@ -19,17 +19,23 @@ p{
     margin-bottom: 2rem;
 }
 
-.pregunta{
-    background-color:#208f5b;
-}
-
 .tamano{
     font-size:7rem;
     color: white;
+
+}
+
+.pregunta{
+    background-color: rgba(42,194,138);
+}
+
+.boton{
+    background-color: rgba(211,176,77);
+}
+
+.boton:hover{
+    border: 1px solid black;
+    background-color: rgb(233, 193, 85);
+}
     /* color: #208f5b; */
     /* color: #d3b04d; */
-}
-/* 
-.boton{
-    background-color: #d3b04d;
-} */

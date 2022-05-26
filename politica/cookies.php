@@ -20,7 +20,7 @@
     <!-- links css -->
     <link rel="stylesheet" href="../css/headers.css">
     <link rel="stylesheet" href="../css/privacidad.css">
-    <title>Inicio</title>
+    <title>Cookies</title>
 </head>
 
 <body>
@@ -30,9 +30,9 @@
         </a>
 
         <ul class="nav nav-pills mt-4">
-            <li class="nav-item"><a href="index.php" class="nav-link text-white">Inicio</a></li>
-            <li class="nav-item"><a href="productos/index.php" class="nav-link text-white">Productos</a></li>
-            <li class="nav-item"><a href="vendedores/index.php" class="nav-link text-white">Vendedores</a></li>
+            <li class="nav-item"><a href="../index.php" class="nav-link text-white">Inicio</a></li>
+            <li class="nav-item"><a href="../productos/index.php" class="nav-link text-white">Productos</a></li>
+            <li class="nav-item"><a href="../vendedores/index.php" class="nav-link text-white">Vendedores</a></li>
             <?php
                 // Continuar la sesión
                 session_start();

@@ -1,3 +1,10 @@
+.tamano{
+    font-size: 3rem;
+    font-weight: lighter;
+    margin-top: 4%;
+    margin-bottom: 4%;
+}
+
 table {
     width: 100%;
     font-size: 1.1em;
@@ -13,29 +20,6 @@ td {
     padding: 3%;
 }
 
-.opcion {
-    display: flex;
-    width: 24.5%;
-    margin-left: 37%;
-    justify-content: space-between;
-}
-
-h3:hover {
-    cursor: pointer;
-}
-
-.subrayado {
-    border-bottom: 1px solid black;
-}
-
-.oculto {
-    display: none;
-}
-
-input[type=text],input[type=password],input[type=email],input[type=tel]{
-    width: 100%;
-}
-
 input[type=submit] {
     margin-left: 40%;
     font-size: 0.9em;
@@ -49,4 +33,12 @@ input[type=submit] {
     border-bottom-right-radius: 20px 20px;
     border-top-left-radius: 20px 20px;
     border-top-right-radius: 20px 20px;
+}
+
+textarea{
+    width: 100%;
+}
+
+input[type=text],input[type=password],input[type=email],input[type=tel]{
+    width: 100%;
 }

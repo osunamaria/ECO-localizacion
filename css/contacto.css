@@ -5,18 +5,6 @@
     margin-bottom: 4%;
 }
 
-table {
-    width: 30%;
-    margin-left: 37%;
-    margin-top: 2%;
-    font-size: 1.1em;
-    margin-bottom: 2%;
-}
-
-td {
-    padding: 2%;
-}
-
-td:nth-child(even){
-    text-align: right;
+h4{
+    margin-bottom: 3%;
 }

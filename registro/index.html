@@ -45,98 +45,112 @@
             </div>
         </article>
         <article>
-            <form action="registrar.php" method="POST" enctype="multipart/form-data" id="formRegistro">
-                <table>
-                    <tr>
-                        <td>
-                            <label for="usuario">Usuario</label>
-                        </td>
-                        <td>
-                            <input type="text" name="usuario" id="usuario" required>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="contrasena">Contrase&ntilde;a</label>
-                        </td>
-                        <td>
-                            <input type="password" name="contrasena" id="contrasena" required>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="nombre">Nombre</label>
-                        </td>
-                        <td>
-                            <input type="text" name="nombre" id="nombre" required>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="apellidos">Apellidos</label>
-                        </td>
-                        <td>
-                            <input type="text" name="apellidos" id="apellidos" required>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="dni">DNI</label>
-                        </td>
-                        <td>
-                            <input type="text" name="dni" id="dni" required>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="correo">Correo</label>
-                        </td>
-                        <td>
-                            <input type="email" name="correo" id="correo" required>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="telefono">Telefono</label>
-                        </td>
-                        <td>
-                            <input type="tel" name="telefono" id="telefono" length="9" required>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <input type="submit" value="Enviar">
-                        </td>
-                    </tr>
-                </table>
-            </form>
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col-3"></div>
+                    <div class="col-6">
+                        <form action="registrar.php" method="POST" enctype="multipart/form-data" id="formRegistro">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <label for="usuario">Usuario</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="usuario" id="usuario" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="contrasena">Contrase&ntilde;a</label>
+                                    </td>
+                                    <td>
+                                        <input type="password" name="contrasena" id="contrasena" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="nombre">Nombre</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="nombre" id="nombre" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="apellidos">Apellidos</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="apellidos" id="apellidos" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="dni">DNI</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="dni" id="dni" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="correo">Correo</label>
+                                    </td>
+                                    <td>
+                                        <input type="email" name="correo" id="correo" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="telefono">Telefono</label>
+                                    </td>
+                                    <td>
+                                        <input type="tel" name="telefono" id="telefono" length="9" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <input class="botones" type="submit" value="Registrarse">
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </article>
         <article>
-            <form action="iniciarSesion.php" method="POST" enctype="multipart/form-data" id="formInicio" class="oculto">
-                <table>
-                    <tr>
-                        <td>
-                            <label for="usuario">Usuario</label>
-                        </td>
-                        <td>
-                            <input type="text" name="usuario" id="usuario">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="contrasena">Contrase&ntilde;a</label>
-                        </td>
-                        <td>
-                            <input type="password" name="contrasena" id="contrasena">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <input type="submit" value="Enviar">
-                        </td>
-                    </tr>
-                </table>
-            </form>
+            <div class="container">
+                <div class="row">
+                    <div class="col-3"></div>
+                    <div class="col-6">
+                        <form action="iniciarSesion.php" method="POST" enctype="multipart/form-data" id="formInicio" class="oculto">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <label for="usuario">Usuario</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="usuario" id="usuario">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="contrasena">Contrase&ntilde;a</label>
+                                    </td>
+                                    <td>
+                                        <input type="password" name="contrasena" id="contrasena">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <input class="botones" type="submit" value="Iniciar sesión">
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </article>
     </section>
     <script src="../js/bootstrap.bundle.min"></script>

@@ -20,7 +20,7 @@
     <!-- links css -->
     <link rel="stylesheet" href="../css/headers.css">
     <link rel="stylesheet" href="../css/contacto.css">
-    <title>Inicio</title>
+    <title>Contacto</title>
 </head>
 
 <body>
@@ -30,9 +30,9 @@
         </a>
 
         <ul class="nav nav-pills mt-4">
-            <li class="nav-item"><a href="index.php" class="nav-link text-white">Inicio</a></li>
-            <li class="nav-item"><a href="productos/index.php" class="nav-link text-white">Productos</a></li>
-            <li class="nav-item"><a href="vendedores/index.php" class="nav-link text-white">Vendedores</a></li>
+            <li class="nav-item"><a href="../index.php" class="nav-link text-white">Inicio</a></li>
+            <li class="nav-item"><a href="../productos/index.php" class="nav-link text-white">Productos</a></li>
+            <li class="nav-item"><a href="../vendedores/index.php" class="nav-link text-white">Vendedores</a></li>
             <?php
                 // Continuar la sesión
                 session_start();
@@ -64,39 +64,47 @@
         </ul>
     </header>
 
-    <section>
+    <section class="text-center">
         <article>
-            <h3 class="text-center tamano">CONTACTO</h3>
+            <h3 class="tamano">CONTACTO</h3>
         </article>
-        <div class="container mb-5">
-                <article>
-                    <form action="envioContacto.php" method="POST" enctype="multipart/form-data" id="formRegistro">
-                        <table>
-                            <tr>
-                                <td>
-                                    <label for="correo">Correo</label>
-                                </td>
-                                <td>
-                                    <input type="text" name="correo" id="correo" required>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    <label for="mensaje">Mensaje</label>
-                                    <br><br>
-                                    <textarea name="mensaje" id="mensaje" cols="44" rows="10"></textarea>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    <input type="submit" value="Enviar">
-                                </td>
-                            </tr>
-                        </table>
-                    </form>
-                </article>
+        
+        <article>
+            <div class="container mb-5">
+                <div class="row">
+                    <div class="col-4"></div>
+                    <div class="col-4">
+                        <h4>Online:</h4>
+                        <a href="formularioContacto.php">Formulario de contacto</a>
+                    </div>
+                </div>
             </div>
-        </div>
+        </article>
+        <article>
+            <div class="container mb-5">
+                <div class="row">
+                    <div class="col-4"></div>
+                    <div class="col-4">
+                        <h4>Por teléfono:</h4>
+                        <p>900 199 202</p>
+                        <p>De lunes a vierenes no festivos de 9:30 a 19:30h</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <article>
+            <div class="container mb-5">
+                <div class="row">
+                    <div class="col-4"></div>
+                    <div class="col-4">
+                        <h4>Por correo postal:</h4>
+                        <p>ECO-localización</p>
+                        <p>C/Avenida de Cuba 24</p>
+                        <p>41927 Sevilla</p>
+                    </div>
+                </div>
+            </div>
+        </article>
     </section>
 
     <footer class="d-flex text-white cabecera">

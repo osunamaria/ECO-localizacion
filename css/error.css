@@ -1,0 +1,15 @@
+.piePag{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.tamano{
+    margin-top: 20%;
+}
+
+p{
+    font-family: 'Calligraffitti', cursive;
+    font-size: 150%;
+}

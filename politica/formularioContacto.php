@@ -20,11 +20,11 @@
     <!-- links css -->
     <link rel="stylesheet" href="../css/headers.css">
     <link rel="stylesheet" href="../css/formContacto.css">
-    <title>Registro</title>
+    <title>Contacto</title>
 </head>
 
 <body>
-<header class="d-flex flex-wrap justify-content-center py-3 cabecera">
+    <header class="d-flex flex-wrap justify-content-center py-3 cabecera">
         <a href="../index.php" class="me-md-auto ms-5">
             <img src="../img/Captura-removebg-preview.png" class="logo">
         </a>
@@ -65,86 +65,30 @@
     </header>
 
     <section>
-    <article class="d-flex justify-content-around align-items-center fondo">
-            <h3 class="tamano text-center">Empieza a vender</h3>
+        <article>
+            <h3 class="text-center tamano">CONTACTO</h3>
         </article>
+        
         <article>
             <div class="container mb-5">
                 <div class="row">
-                    <div class="col-3"></div>
-                    <div class="col-6">
-                        <form action="registrar.php" method="POST" enctype="multipart/form-data" id="formRegistro">
+                    <div class="col-4"></div>
+                    <div class="col-4">
+                        <form action="envioContacto.php" method="POST" enctype="multipart/form-data" id="formRegistro">
                             <table>
-                                <tr>
-                                    <td>
-                                        <label for="nombre">Nombre</label>
-                                    </td>
-                                    <td>
-                                        <input type="text" name="nombre" id="nombre" required>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label for="apellidos">Apellidos</label>
-                                    </td>
-                                    <td>
-                                        <input type="text" name="apellidos" id="apellidos" required>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label for="dni">DNI</label>
-                                    </td>
-                                    <td>
-                                        <input type="text" name="dni" id="dni" required>
-                                    </td>
-                                </tr>
                                 <tr>
                                     <td>
                                         <label for="correo">Correo</label>
                                     </td>
-                                    <td>
-                                        <input type="email" name="correo" id="correo" required>
+                                    <td class="justify-content-between">
+                                        <input type="text" name="correo" id="correo" required>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>
-                                        <label for="telefono">Telefono</label>
-                                    </td>
-                                    <td>
-                                        <input type="tel" name="telefono" id="telefono" length="9" required>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label for="ciudad">Ciudad</label>
-                                    </td>
-                                    <td>
-                                        <input type="text" name="ciudad" id="ciudad" required>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label for="direccion">Direccion</label>
-                                    </td>
-                                    <td>
-                                        <input type="text" name="direccion" id="direccion" required>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label for="cp">Codigo postal</label>
-                                    </td>
-                                    <td>
-                                        <input type="text" name="cp" id="cp" required>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label for="certificado">Certificado</label>
-                                    </td>
-                                    <td>
-                                        <input type="file" name="certificado" id="certificado" required>
+                                    <td colspan="2">
+                                        <label for="mensaje">Mensaje</label>
+                                        <br><br>
+                                        <textarea name="mensaje" id="mensaje" rows="10"></textarea>
                                     </td>
                                 </tr>
                                 <tr>
@@ -166,9 +110,9 @@
 
                 <div class="col-xl-4 col-sm-12">
                     <ul class="d-flex lista justify-content-around align-items-center">
-                        <li><a class="text-decoration-none text-white" href="../politica/privacidad.php">Política de privacidad</a></li>
-                        <li><a class="text-decoration-none text-white" href="../politica/cookies.php">Política de cookies</a></li>
-                        <li><a class="text-decoration-none text-white" href="../politica/contacto.php">Contacto</a></li>
+                        <li><a class="text-decoration-none text-white" href="privacidad.php">Política de privacidad</a></li>
+                        <li><a class="text-decoration-none text-white" href="cookies.php">Política de cookies</a></li>
+                        <li><a class="text-decoration-none text-white" href="contacto.php">Contacto</a></li>
                     </ul>
                 </div>
 

@@ -31,7 +31,6 @@
 
         <ul class="nav nav-pills mt-4">
             <li class="nav-item"><a href="../index.php" class="nav-link text-white">Inicio</a></li>
-            <li class="nav-item"><a href="../productos/index.php" class="nav-link text-white">Productos</a></li>
             <li class="nav-item"><a href="../vendedores/index.php" class="nav-link text-white">Vendedores</a></li>
             <?php
                 // Continuar la sesión
@@ -49,9 +48,7 @@
                                 echo "Gestiones";
                             echo "</a>";
                             echo "<ul class='dropdown-menu' aria-labelledby='navbarDropdown'>";
-                                echo "<li><a class='dropdown-item' href='gestion_cuentas/index.php'>Usuarios</a></li>";
-                                echo "<li><a class='dropdown-item' href='gestion_publicaciones/index.php'>Publicaciones</a></li>";
-                                echo "<li><a class='dropdown-item' href='ventas/index.php'>Ventas</a></li>";
+                                echo "<li><a class='dropdown-item' href='gestion_cuentas/index.php'>Nuevos vendedores</a></li>";
                                 echo "<li><a class='dropdown-item' href='atencion_cliente/index.php'>Atención al cliente</a></li>";
                             echo "</ul>";
                         echo "</li>";
@@ -121,6 +118,14 @@
                                     </td>
                                     <td>
                                         <input type="text" name="ciudad" id="ciudad" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="localidad">Localidad</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="localidad" id="localidad" required>
                                     </td>
                                 </tr>
                                 <tr>

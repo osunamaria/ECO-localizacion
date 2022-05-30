@@ -39,7 +39,7 @@
                 if(isset($_SESSION['sesion_iniciada']) == true ){
                     $tipo = session_id();
                     if($tipo=="vendedor"){
-                        echo "<li class='nav-item'><a href='ventas/index.php' class='nav-link text-white'>Ventas</a></li>";
+                        echo "<li class='nav-item'><a href='administracion_productos/index.php' class='nav-link text-white'>Ventas</a></li>";
                         echo "<li class='nav-item'><a href='administracion_productos/index.php' class='nav-link text-white'>Administrar productos</a></li>";
                     }
                     if($tipo=="administrador"){
@@ -48,9 +48,7 @@
                                 echo "Gestiones";
                             echo "</a>";
                             echo "<ul class='dropdown-menu' aria-labelledby='navbarDropdown'>";
-                                echo "<li><a class='dropdown-item' href='gestion_cuentas/index.php'>Usuarios</a></li>";
-                                echo "<li><a class='dropdown-item' href='gestion_publicaciones/index.php'>Publicaciones</a></li>";
-                                echo "<li><a class='dropdown-item' href='ventas/index.php'>Ventas</a></li>";
+                                echo "<li><a class='dropdown-item' href='gestion_cuentas/index.php'>Nuevos vendedores</a></li>";
                                 echo "<li><a class='dropdown-item' href='atencion_cliente/index.php'>Atención al cliente</a></li>";
                             echo "</ul>";
                         echo "</li>";
@@ -85,7 +83,8 @@
             <h3>Nuestra filosofía de venta</h3>
             <p>En ECO-localización hemos creado un nuevo tipo de venta más cercana con el cliente, de forma que no solo pueda conocer el producto sino también al vendedor 
                 y podrá darle su opinión no solo en nuestra web sino también en persona. ECO-localización busca fomentar el mercado local, de esta forma el pago se realiza a través 
-                de la plataforma, mientras que la entrega se acordará entre el cliente y el vendedor.</p>
+                de la plataforma, mientras que la entrega se acordará entre el cliente y el vendedor. Nuestra plataforma se hace cargo de los posibles cambios fallidos, ya sea por 
+                la no entrega del producto o por el mal estado del mismo.</p>
         </article>
     </section>
     

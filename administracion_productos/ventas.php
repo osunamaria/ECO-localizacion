@@ -19,12 +19,12 @@
 
     <!-- links css -->
     <link rel="stylesheet" href="../css/headers.css">
-    <link rel="stylesheet" href="../css/contacto.css">
-    <title>Contacto</title>
+    <link rel="stylesheet" href="../css/formContacto.css">
+    <title>Registro</title>
 </head>
 
 <body>
-    <header class="d-flex flex-wrap justify-content-center py-3 cabecera">
+<header class="d-flex flex-wrap justify-content-center py-3 cabecera">
         <a href="../index.php" class="me-md-auto ms-5">
             <img src="../img/Captura-removebg-preview.png" class="logo">
         </a>
@@ -39,8 +39,8 @@
                 if(isset($_SESSION['sesion_iniciada']) == true ){
                     $tipo = session_id();
                     if($tipo=="vendedor"){
-                        echo "<li class='nav-item'><a href='../administracion_productos/index.php' class='nav-link text-white'>Ventas</a></li>";
-                        echo "<li class='nav-item'><a href='../administracion_productos/index.php' class='nav-link text-white'>Administrar productos</a></li>";
+                        echo "<li class='nav-item'><a href='ventas.php' class='nav-link text-white'>Ventas</a></li>";
+                        echo "<li class='nav-item'><a href='index.php' class='nav-link text-white'>Administrar productos</a></li>";
                     }
                     if($tipo=="administrador"){
                         echo "<li class='nav-item dropdown'>";
@@ -61,46 +61,9 @@
         </ul>
     </header>
 
-    <section class="text-center">
-        <article>
-            <h3 class="tamano">CONTACTO</h3>
-        </article>
-        
-        <article>
-            <div class="container mb-5">
-                <div class="row">
-                    <div class="col-4"></div>
-                    <div class="col-4">
-                        <h4>Online:</h4>
-                        <a href="formularioContacto.php">Formulario de contacto</a>
-                    </div>
-                </div>
-            </div>
-        </article>
-        <article>
-            <div class="container mb-5">
-                <div class="row">
-                    <div class="col-4"></div>
-                    <div class="col-4">
-                        <h4>Por teléfono:</h4>
-                        <p>900 199 202</p>
-                        <p>De lunes a vierenes no festivos de 9:30 a 19:30h</p>
-                    </div>
-                </div>
-            </div>
-        </article>
-        <article>
-            <div class="container mb-5">
-                <div class="row">
-                    <div class="col-4"></div>
-                    <div class="col-4">
-                        <h4>Por correo postal:</h4>
-                        <p>ECO-localización</p>
-                        <p>C/Avenida de Cuba 24</p>
-                        <p>41927 Sevilla</p>
-                    </div>
-                </div>
-            </div>
+    <section>
+        <article class="d-flex justify-content-around align-items-center fondo">
+            <!-- mostrar ventas no terminadas con opcion de marcas como terminadas -->
         </article>
     </section>
 
@@ -110,9 +73,9 @@
 
                 <div class="col-xl-4 col-sm-12">
                     <ul class="d-flex lista justify-content-around align-items-center">
-                        <li><a class="text-decoration-none text-white" href="privacidad.php">Política de privacidad</a></li>
-                        <li><a class="text-decoration-none text-white" href="cookies.php">Política de cookies</a></li>
-                        <li><a class="text-decoration-none text-white" href="contacto.php">Contacto</a></li>
+                        <li><a class="text-decoration-none text-white" href="../politica/privacidad.php">Política de privacidad</a></li>
+                        <li><a class="text-decoration-none text-white" href="../politica/cookies.php">Política de cookies</a></li>
+                        <li><a class="text-decoration-none text-white" href="../politica/contacto.php">Contacto</a></li>
                     </ul>
                 </div>
 

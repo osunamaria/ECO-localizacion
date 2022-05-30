@@ -1,0 +1,28 @@
+.tamano{
+    font-size: 3rem;
+    font-weight: lighter;
+    margin-top: 4%;
+    margin-bottom: 4%;
+}
+
+.botones{
+    background-color: black;
+    color: white;
+    border: inherit;
+    border-bottom-left-radius: 20px 20px;
+    border-bottom-right-radius: 20px 20px;
+    border-top-left-radius: 20px 20px;
+    border-top-right-radius: 20px 20px;
+}
+
+.mapa{
+    background-image: url('../img/mapa.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0;
+    height: 44rem;
+}
+
+.botones:hover{
+    background-color: rgb(46, 46, 46);
+}

@@ -32,7 +32,6 @@
 
         <ul class="nav nav-pills mt-4">
             <li class="nav-item"><a href="../index.php" class="nav-link text-white">Inicio</a></li>
-            <li class="nav-item"><a href="../productos/index.php" class="nav-link text-white">Productos</a></li>
             <li class="nav-item"><a href="../vendedores/index.php" class="nav-link text-white">Vendedores</a></li>
             <?php
                 // Continuar la sesión
@@ -41,8 +40,8 @@
                 if(isset($_SESSION['sesion_iniciada']) == true ){
                     $tipo = session_id();
                     if($tipo=="vendedor"){
-                        echo "<li class='nav-item'><a href='ventas/index.php' class='nav-link text-white'>Ventas</a></li>";
-                        echo "<li class='nav-item'><a href='administracion_productos/index.php' class='nav-link text-white'>Administrar productos</a></li>";
+                        echo "<li class='nav-item'><a href='../administracion_productos/ventas.php' class='nav-link text-white'>Ventas</a></li>";
+                        echo "<li class='nav-item'><a href='../administracion_productos/index.php' class='nav-link text-white'>Administrar productos</a></li>";
                     }
                     if($tipo=="administrador"){
                         echo "<li class='nav-item dropdown'>";
@@ -50,16 +49,14 @@
                                 echo "Gestiones";
                             echo "</a>";
                             echo "<ul class='dropdown-menu' aria-labelledby='navbarDropdown'>";
-                                echo "<li><a class='dropdown-item' href='gestion_cuentas/index.php'>Usuarios</a></li>";
-                                echo "<li><a class='dropdown-item' href='gestion_publicaciones/index.php'>Publicaciones</a></li>";
-                                echo "<li><a class='dropdown-item' href='ventas/index.php'>Ventas</a></li>";
-                                echo "<li><a class='dropdown-item' href='atencion_cliente/index.php'>Atención al cliente</a></li>";
+                                echo "<li><a class='dropdown-item' href='../gestion_cuentas/index.php'>Nuevos vendedores</a></li>";
+                                echo "<li><a class='dropdown-item' href='../atencion_cliente/index.php'>Atención al cliente</a></li>";
                             echo "</ul>";
                         echo "</li>";
                     }
                     echo "<li class='nav-item me-md-auto'><a href='../cerrarSesion.php' class='nav-link active bg-secondary rounded-pill me-5' aria-current='page'>Cerrar sesión</a></li>";
                 }else{
-                    echo "<li class='nav-item me-md-auto'><a href='../registro/index.html' class='nav-link active bg-success rounded-pill me-5' aria-current='page'>Entrar</a></li>";
+                    echo "<li class='nav-item me-md-auto'><a href='../registro/index.php' class='nav-link active bg-success rounded-pill me-5' aria-current='page'>Entrar</a></li>";
                 }//Fin si
             ?>
         </ul>

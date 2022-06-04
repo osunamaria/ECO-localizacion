@@ -1,12 +1,10 @@
 <?php
 
     $servidor = "localhost";
-    $baseDatos = "cleanvibes";
+    $baseDatos = "eco-localizacion";
     $user = "root";
     $pass = "";
 
-    $usuario=$_POST["usuario"];
-    $contrasena= $_POST["contrasena"];
 
     try {
         $con = new PDO("mysql:host=" . $GLOBALS['servidor'] . ";dbname=" . $GLOBALS['baseDatos'], $GLOBALS['user'], $GLOBALS['pass']);

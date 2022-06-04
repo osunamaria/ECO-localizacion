@@ -45,7 +45,7 @@
             </div>
         </article>
         <article>
-            <div class="container mt-5">
+            <div class="container mt-5 mb-5">
                 <div class="row">
                     <div class="col-3"></div>
                     <div class="col-6">
@@ -57,6 +57,7 @@
                                     </td>
                                     <td>
                                         <input type="text" name="usuario" id="usuario" required>
+                                        <?php?>
                                     </td>
                                 </tr>
                                 <tr>
@@ -64,7 +65,7 @@
                                         <label for="contrasena">Contrase&ntilde;a</label>
                                     </td>
                                     <td>
-                                        <input type="password" name="contrasena" id="contrasena" required>
+                                        <input type="text" name="contrasena" id="contrasena" required>
                                     </td>
                                 </tr>
                                 <tr>
@@ -88,7 +89,7 @@
                                         <label for="dni">DNI</label>
                                     </td>
                                     <td>
-                                        <input type="text" name="dni" id="dni" required>
+                                        <input type="text" name="dni" id="dni" maxlength="9" required>
                                     </td>
                                 </tr>
                                 <tr>
@@ -104,7 +105,39 @@
                                         <label for="telefono">Telefono</label>
                                     </td>
                                     <td>
-                                        <input type="tel" name="telefono" id="telefono" length="9" required>
+                                        <input type="tel" name="telefono" id="telefono" maxlength="9" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="ciudad">Ciudad</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="ciudad" id="ciudad" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="localidad">Localidad</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="localidad" id="localidad" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="direccion">Direccion</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="direccion" id="direccion" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="cp">Codigo postal</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="cp" id="cp" required>
                                     </td>
                                 </tr>
                                 <tr>

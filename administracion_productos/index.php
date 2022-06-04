@@ -12,15 +12,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Calligraffitti&display=swap" rel="stylesheet">
 
     <!-- link para iconos -->
-    <link rel="stylesheet" href="fontawesome-free-5.15.4-web/css/all.min.css">
+    <link rel="stylesheet" href="../fontawesome-free-5.15.4-web/css/all.min.css">
 
     <!-- bootstrap -->
     <link rel="stylesheet" href="../css/bootstrap.min.css">
 
     <!-- links css -->
     <link rel="stylesheet" href="../css/headers.css">
-    <link rel="stylesheet" href="../css/formContacto.css">
-    <title>Registro</title>
+    <link rel="stylesheet" href="../css/gestiones.css">
+    <title>Productos</title>
 </head>
 
 <body>
@@ -55,19 +55,50 @@
                     }
                     echo "<li class='nav-item me-md-auto'><a href='../cerrarSesion.php' class='nav-link active bg-secondary rounded-pill me-5' aria-current='page'>Cerrar sesión</a></li>";
                 }else{
-                    echo "<li class='nav-item me-md-auto'><a href='../registro/index.html' class='nav-link active bg-success rounded-pill me-5' aria-current='page'>Entrar</a></li>";
+                    echo "<li class='nav-item me-md-auto'><a href='../registro/index.php' class='nav-link active bg-success rounded-pill me-5' aria-current='page'>Entrar</a></li>";
                 }//Fin si
             ?>
         </ul>
     </header>
 
     <section>
-        <article class="d-flex justify-content-around align-items-center fondo">
-            <!-- mostrar productos y precios y darle opcion a añadir borrar o editar -->
+    <article">
+        <div class="row">
+                    <div>
+                        <!-- Obtener todas -->
+                        <table class="fixed_headers mt-5">
+                            <thead>
+                                <tr>
+                                    <th>producto</th>
+                                    <th>cantidad</th>
+                                    <th>precio</th>
+                                    <th>Editar</th>
+                                    <th>Eliminar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php include_once "operacionesGenerales.php";
+
+                                    $producto = obtenerProductos($_SESSION['id']);
+                        
+                                    for ($i=0;$i<sizeof($producto);$i++){
+                                        echo "<tr>";
+                                            echo "<td>".$producto[$i]['producto']."</td>";
+                                            echo "<td>".$producto[$i]['cantidad']."</td>";
+                                            echo "<td>".$producto[$i]['precio']."</td>";
+                                            echo "<td><a href='editarProducto.php?varId=".$producto[$i]["id"]."'><i class='fas fa-edit'></i></a></td>";
+                                            echo "<td><a href='eliminarProducto.php?varId=".$producto[$i]["id"]."'><i class='fas fa-trash-alt'></i></a></td>";
+                                        echo "</tr>";
+                                    }
+                                ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
         </article>
     </section>
 
-    <footer class="d-flex text-white cabecera">
+    <footer class="d-flex text-white cabecera position-absolute bottom-0 end-0 w-100">
         <div class="container-fluid py-3">
             <div class="row justify-content-around align-items-center text-center">
 

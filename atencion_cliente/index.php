@@ -12,14 +12,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Calligraffitti&display=swap" rel="stylesheet">
 
     <!-- link para iconos -->
-    <link rel="stylesheet" href="fontawesome-free-5.15.4-web/css/all.min.css">
+    <link rel="stylesheet" href="../fontawesome-free-5.15.4-web/css/all.min.css">
 
     <!-- bootstrap -->
     <link rel="stylesheet" href="../css/bootstrap.min.css">
 
     <!-- links css -->
     <link rel="stylesheet" href="../css/headers.css">
-    <link rel="stylesheet" href="../css/formContacto.css">
+    <link rel="stylesheet" href="../css/gestiones.css">
     <title>Registro</title>
 </head>
 
@@ -55,19 +55,45 @@
                     }
                     echo "<li class='nav-item me-md-auto'><a href='../cerrarSesion.php' class='nav-link active bg-secondary rounded-pill me-5' aria-current='page'>Cerrar sesión</a></li>";
                 }else{
-                    echo "<li class='nav-item me-md-auto'><a href='../registro/index.html' class='nav-link active bg-success rounded-pill me-5' aria-current='page'>Entrar</a></li>";
+                    echo "<li class='nav-item me-md-auto'><a href='../registro/index.php' class='nav-link active bg-success rounded-pill me-5' aria-current='page'>Entrar</a></li>";
                 }//Fin si
             ?>
         </ul>
     </header>
 
     <section>
-        <article class="d-flex justify-content-around align-items-center fondo">
-            <!-- mostrar mensajes de atencion al cliente que no esten marcados como cerrados -->
+        <article>
+            <div class="row">
+                <div>
+                    <!-- Obtener todas -->
+                    <table class="fixed_headers mt-5">
+                        <thead>
+                            <tr>
+                                <th>Correo</th>
+                                <th>Mensaje</th>
+                                <th>Cerrar incidencia</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php include_once "operacionesGenerales.php";
+                                $mensajes = obtenerNuevos();
+                        
+                                for ($i=0;$i<sizeof($mensajes);$i++){
+                                    echo "<tr>";
+                                        echo "<td>".$mensajes[$i]['correo']."</td>";
+                                        echo "<td>".$mensajes[$i]['mensaje']."</td>";
+                                        echo "<td><a href='cerrarMensaje.php?varId=".$mensajes[$i]["id"]."'><i class='fas fa-solid fa-check'></i></a></td>";
+                                    echo "</tr>";
+                                }
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </article>
     </section>
 
-    <footer class="d-flex text-white cabecera">
+    <footer class="d-flex text-white cabecera position-absolute bottom-0 end-0 w-100">
         <div class="container-fluid py-3">
             <div class="row justify-content-around align-items-center text-center">
 

@@ -1,0 +1,15 @@
+table{
+    border: 4px #208f5ba4 solid;
+    background-color: #d3af4d3a;
+    width: 80%;
+    margin-left: 10%;
+    text-align: center;
+}
+
+td,th{
+    padding: 1%;
+    border: 1px #208f5ba4 solid;
+}
+
+/* color: #208f5b; */
+/* color: #d3b04d; */

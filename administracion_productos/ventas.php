@@ -12,15 +12,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Calligraffitti&display=swap" rel="stylesheet">
 
     <!-- link para iconos -->
-    <link rel="stylesheet" href="fontawesome-free-5.15.4-web/css/all.min.css">
+    <link rel="stylesheet" href="../fontawesome-free-5.15.4-web/css/all.min.css">
 
     <!-- bootstrap -->
     <link rel="stylesheet" href="../css/bootstrap.min.css">
 
     <!-- links css -->
     <link rel="stylesheet" href="../css/headers.css">
-    <link rel="stylesheet" href="../css/formContacto.css">
-    <title>Registro</title>
+    <link rel="stylesheet" href="../css/gestiones.css">
+    <title>Ventas</title>
 </head>
 
 <body>
@@ -55,19 +55,52 @@
                     }
                     echo "<li class='nav-item me-md-auto'><a href='../cerrarSesion.php' class='nav-link active bg-secondary rounded-pill me-5' aria-current='page'>Cerrar sesión</a></li>";
                 }else{
-                    echo "<li class='nav-item me-md-auto'><a href='../registro/index.html' class='nav-link active bg-success rounded-pill me-5' aria-current='page'>Entrar</a></li>";
+                    echo "<li class='nav-item me-md-auto'><a href='../registro/index.php' class='nav-link active bg-success rounded-pill me-5' aria-current='page'>Entrar</a></li>";
                 }//Fin si
             ?>
         </ul>
     </header>
 
     <section>
-        <article class="d-flex justify-content-around align-items-center fondo">
-            <!-- mostrar ventas no terminadas con opcion de marcas como terminadas -->
+        <article>
+            <div class="row">
+                <div>
+                    <!-- Obtener todas -->
+                    <table class="fixed_headers mt-5">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Telefono</th>
+                                <th>Producto</th>
+                                <th>Cantidad</th>
+                                <th>precio</th>
+                                <th>Confirmar entrega</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php include_once "operacionesGenerales.php";
+
+                                $venta = obtenerVentas($_SESSION['id']);
+                        
+                                for ($i=0;$i<sizeof($venta);$i++){
+                                    echo "<tr>";
+                                        echo "<td>".$venta[$i]['nombre']."</td>";
+                                        echo "<td>".$venta[$i]['telefono']."</td>";
+                                        echo "<td>".$venta[$i]['producto']."</td>";
+                                        echo "<td>".$venta[$i]['cantidad']."</td>";
+                                        echo "<td>".($venta[$i]['precio']*$venta[$i]['cantidad'])."</td>";
+                                        echo "<td><a href='confirmarVenta.php?varId=".$venta[$i]["id"]."'><i class='fas fa-solid fa-check'></i></a></td>";
+                                    echo "</tr>";
+                                }
+                            ?>
+                    </tbody>
+                    </table>
+                </div>
+            </div>
         </article>
     </section>
 
-    <footer class="d-flex text-white cabecera">
+    <footer class="d-flex text-white cabecera position-absolute bottom-0 end-0 w-100">
         <div class="container-fluid py-3">
             <div class="row justify-content-around align-items-center text-center">
 

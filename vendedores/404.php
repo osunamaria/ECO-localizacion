@@ -24,14 +24,14 @@
 </head>
 
 <body>
-<header class="d-flex flex-wrap justify-content-center py-3 cabecera">
+    <header class="d-flex flex-wrap justify-content-center py-3 cabecera">
         <a href="../index.php" class="me-md-auto ms-5">
             <img src="../img/Captura-removebg-preview.png" class="logo">
         </a>
 
         <ul class="nav nav-pills mt-4">
             <li class="nav-item"><a href="../index.php" class="nav-link text-white">Inicio</a></li>
-            <li class="nav-item"><a href="index.php" class="nav-link text-white">Vendedores</a></li>
+            <li class="nav-item"><a href="../vendedores/index.php" class="nav-link text-white">Vendedores</a></li>
             <?php
                 // Continuar la sesión
                 session_start();
@@ -55,7 +55,7 @@
                     }
                     echo "<li class='nav-item me-md-auto'><a href='../cerrarSesion.php' class='nav-link active bg-secondary rounded-pill me-5' aria-current='page'>Cerrar sesión</a></li>";
                 }else{
-                    echo "<li class='nav-item me-md-auto'><a href='../registro/index.html' class='nav-link active bg-success rounded-pill me-5' aria-current='page'>Entrar</a></li>";
+                    echo "<li class='nav-item me-md-auto'><a href='../registro/index.php' class='nav-link active bg-success rounded-pill me-5' aria-current='page'>Entrar</a></li>";
                 }//Fin si
             ?>
         </ul>

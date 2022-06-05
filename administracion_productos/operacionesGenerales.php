@@ -48,7 +48,7 @@
     function obtenerProductos($id){
         try {
             $con = new PDO("mysql:host=" . $GLOBALS['servidor'] . ";dbname=" . $GLOBALS['baseDatos'], $GLOBALS['user'], $GLOBALS['pass']);
-            $sql = $con->prepare("SELECT * from precios,productos WHERE precios.id_producto=productos.id AND precios.id_cliente = :id;");
+            $sql = $con->prepare("SELECT * from precios,productos WHERE precios.id_producto=productos.id AND precios.id_vendedor = :id;");
             $sql->bindParam(":id", $id);
             $sql->execute();
             $miArray = [];

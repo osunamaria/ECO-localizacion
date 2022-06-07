@@ -33,7 +33,6 @@
 
         <ul class="nav nav-pills mt-4">
             <li class="nav-item"><a href="../index.php" class="nav-link text-white">Inicio</a></li>
-            <li class="nav-item"><a href="../productos/index.php" class="nav-link text-white">Productos</a></li>
             <li class="nav-item"><a href="../vendedores/index.php" class="nav-link text-white">Vendedores</a></li>
         </ul>
     </header>

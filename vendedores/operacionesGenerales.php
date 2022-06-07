@@ -5,10 +5,11 @@
     $user = "root";
     $pass = "";
 
-    function obtenerNuevos(){
+    function obtenerVendedores(){
         try {
             $con = new PDO("mysql:host=" . $GLOBALS['servidor'] . ";dbname=" . $GLOBALS['baseDatos'], $GLOBALS['user'], $GLOBALS['pass']);
-            $sql = $con->prepare("SELECT * from clientes WHERE confirmado = '0' AND tipo = 'vendedor';");
+            $sql = $con->prepare("SELECT * from clientes WHERE confirmado = '1' AND cp = :cp;");
+            $sql->bindParam(":cp", $cp); //Para evitar inyecciones SQL
             $sql->execute();
             $miArray = [];
             while ($row = $sql->fetch(PDO::FETCH_ASSOC)) { //Haciendo uso de PDO iremos creando el array dinámicamente
@@ -21,7 +22,21 @@
         return $miArray;
     }
 
-    function insertarUsuario($usuario,$contrasena,$nombre,$apellidos,$dni,$correo,$telefono,$tipo){
+    function obtenerCompra($id){
+        try {
+            $con = new PDO("mysql:host=" . $GLOBALS['servidor'] . ";dbname=" . $GLOBALS['baseDatos'], $GLOBALS['user'], $GLOBALS['pass']);
+            $sql = $con->prepare("SELECT * from precios,productos WHERE precios.id_producto=productos.id AND precios.id = :id;");
+            $sql->bindParam(":id", $id); //Para evitar inyecciones SQL
+            $sql->execute();
+            $row = $sql->fetch(PDO::FETCH_ASSOC); //Recibimos la linea correspondiente en ROW
+            $con = null; //Cerramos la conexión
+            return $row;
+        } catch (PDOException $e) {
+            header("location: ../php/error.php");
+        }
+    }
+
+    function insertarCompra($usuario,$contrasena,$nombre,$apellidos,$dni,$correo,$telefono,$tipo){
         
         try {
             $con = new PDO("mysql:host=" . $GLOBALS['servidor'] . ";dbname=" . $GLOBALS['baseDatos'], $GLOBALS['user'], $GLOBALS['pass']);
@@ -44,40 +59,5 @@
             header("location: ../php/error.php");
         }
 
-    }
-
-    function eliminarUsuario($id){
-        $retorno = false;
-        try{
-            $con = new PDO("mysql:host=" . $GLOBALS['servidor'] . ";dbname=" . $GLOBALS['baseDatos'], $GLOBALS['user'], $GLOBALS['pass']);
-            $sql = $con->prepare("DELETE from socios where id=:id");
-            $sql->bindParam(":id", $id);
-            $sql->execute();
-            if ($sql->rowCount() > 0){
-                $retorno = true;
-            }
-            $con = null; //Cerramos la conexión
-        }catch(PDOException $e){
-            header("location: ../php/error.php");
-        }
-        return $retorno;
-    }
-
-    function confirmarUsuario($id)
-    {
-        $retorno = false;
-        try {
-            $con = new PDO("mysql:host=" . $GLOBALS['servidor'] . ";dbname=" . $GLOBALS['baseDatos'], $GLOBALS['user'], $GLOBALS['pass']);
-            $sql = $con->prepare("UPDATE socios  set confirmado='1' where id=:id;");
-            $sql->bindParam(":id", $id);
-            $sql->execute();
-            if ($sql->rowCount() > 0) {
-                $retorno = true;
-            }
-            $con = null; //Cerramos la conexión
-        } catch (PDOException $e) {
-            header("location: ../php/error.php");
-        }
-        return $retorno;
     }
 ?>

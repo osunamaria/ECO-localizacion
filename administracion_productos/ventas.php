@@ -93,12 +93,14 @@
                                     echo "</tr>";
                                 }
                             ?>
-                    </tbody>
+                        </tbody>
                     </table>
                 </div>
             </div>
         </article>
     </section>
+    
+    
 
     <footer class="d-flex text-white cabecera position-absolute bottom-0 end-0 w-100">
         <div class="container-fluid py-3">

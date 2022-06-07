@@ -39,7 +39,7 @@
                 if(isset($_SESSION['sesion_iniciada']) == true ){
                     $tipo = session_id();
                     if($tipo=="vendedor"){
-                        echo "<li class='nav-item'><a href='administracion_productos/index.php' class='nav-link text-white'>Ventas</a></li>";
+                        echo "<li class='nav-item'><a href='administracion_productos/ventas.php' class='nav-link text-white'>Ventas</a></li>";
                         echo "<li class='nav-item'><a href='administracion_productos/index.php' class='nav-link text-white'>Administrar productos</a></li>";
                     }
                     if($tipo=="administrador"){

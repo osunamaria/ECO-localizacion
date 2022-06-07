@@ -62,44 +62,61 @@
     </header>
 
     <section>
-        <article">
-            <div class="row">
-                <h3 class="mb-3 text-center mt-5">Tus productos</h3>
-                <div>
-                    <!-- Obtener todas -->
-                    <table class="fixed_headers mt-5">
-                        <thead>
-                            <tr>
-                                <th>producto</th>
-                                <th>cantidad</th>
-                                <th>precio</th>
-                                <th>Editar</th>
-                                <th>Eliminar</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php include_once "operacionesGenerales.php";
+        <?php include "operacionesGenerales.php";
+            if (count($_POST) > 0) {
+                //comprobación
+                if($_POST["cantidad"]=="" || $_POST["precio"]==""){
+                    
+                    echo "Debe rellenar todos los campos";
 
-                                $producto = obtenerProductos($_SESSION['id']);
-                        
-                                for ($i=0;$i<sizeof($producto);$i++){
-                                    echo "<tr>";
-                                        echo "<td>".$producto[$i]['producto']."</td>";
-                                        echo "<td>".$producto[$i]['cantidad']."</td>";
-                                        echo "<td>".$producto[$i]['precio']."</td>";
-                                        echo "<td><a href='editarProducto.php?varId=".$producto[$i]["id"]."'><i class='fas fa-edit'></i></a></td>";
-                                        echo "<td><a href='eliminarProducto.php?varId=".$producto[$i]["id"]."'><i class='fas fa-trash-alt'></i></a></td>";
-                                    echo "</tr>";
-                                }
-                            ?>
-                        </tbody>
+                }
+                insertarProducto($_SESSION['id'], $_POST["seleccionProducto"], $_POST["cantidad"], $_POST["precio"]);
+            }
+        ?>
+        <article>
+            <div class="container">
+                <h4 class="mb-3 text-center mt-5">Información</h4>
+                <form class="needs-validation form-register" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST" enctype="multipart/form-data" id="formRegistro" novalidate>
+                    <table>
+                        <tr>
+                            <td>
+                                <label for="producto">Producto</label>
+                            </td>
+                            <td>
+                                <select name="seleccionProducto" id="seleccionProducto">
+                                    <?php include "operacionesGenerales.php";
+                                        $listaProductos=obtenerListaProductos();
+                                        for ($i=0;$i<sizeof($listaProductos);$i++){
+                                            echo "<option value='".$listaProductos[$i]['id']."'>".$listaProductos[$i]['producto']."</option>";
+                                            
+                                        }
+                                    ?>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="cantidad">Cantidad</label>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" name="cantidad" placeholder="Cantidad" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="precio">Precio</label>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" name="precio" placeholder="Precio" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input type="submit" value="Editar">
+                            </td>
+                        </tr>
                     </table>
-                </div>
-            </div>
-            <div class="container d-flex justify-content-center">
-                <?php include_once "operacionesGenerales.php";
-                    echo "<a class='text-decoration-none mt-5' href='anadirProducto.php'>Añadir <i class='fas fa-plus'></i></i></a>";
-                ?>
+                </form>
             </div>
         </article>
     </section>

@@ -65,6 +65,7 @@
         <article>
             <div class="row">
                 <div>
+                    <h3 class="mb-3 text-center mt-5">Tus ventas</h3>
                     <!-- Obtener todas -->
                     <table class="fixed_headers mt-5">
                         <thead>

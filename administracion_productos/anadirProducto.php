@@ -69,13 +69,26 @@
                     
                     echo "Debe rellenar todos los campos";
 
+                }else{
+                    $cumplido=insertarProducto($_SESSION['id'], $_POST["seleccionProducto"], $_POST["cantidad"], $_POST["precio"]);
+                    if ($cumplido==true) {
+
+                        header("Location: index.php");
+
+                    } else {
+
+                        $error = "Datos incorrectos o no se ha actualizado nada";
+                        
+                    }
+
                 }
-                insertarProducto($_SESSION['id'], $_POST["seleccionProducto"], $_POST["cantidad"], $_POST["precio"]);
+                
+
             }
         ?>
         <article>
             <div class="container">
-                <h4 class="mb-3 text-center mt-5">Información</h4>
+                <h3 class="mb-3 text-center mt-5">Información</h3>
                 <form class="needs-validation form-register" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST" enctype="multipart/form-data" id="formRegistro" novalidate>
                     <table>
                         <tr>
@@ -84,10 +97,10 @@
                             </td>
                             <td>
                                 <select name="seleccionProducto" id="seleccionProducto">
-                                    <?php include "operacionesGenerales.php";
+                                    <?php
                                         $listaProductos=obtenerListaProductos();
                                         for ($i=0;$i<sizeof($listaProductos);$i++){
-                                            echo "<option value='".$listaProductos[$i]['id']."'>".$listaProductos[$i]['producto']."</option>";
+                                            echo '<option value="'.$listaProductos[$i]['id'].'">'.$listaProductos[$i]['producto'].'</option>';
                                             
                                         }
                                     ?>
@@ -112,7 +125,7 @@
                         </tr>
                         <tr>
                             <td colspan="2">
-                                <input type="submit" value="Editar">
+                                <input type="submit" value="Añadir">
                             </td>
                         </tr>
                     </table>

@@ -10,7 +10,7 @@
     function obtenerVentas($id){
         try {
             $con = new PDO("mysql:host=" . $GLOBALS['servidor'] . ";dbname=" . $GLOBALS['baseDatos'], $GLOBALS['user'], $GLOBALS['pass']);
-            $sql = $con->prepare("SELECT ventas.id,clientes.nombre,clientes.telefono,productos.producto,ventas.cantidad,precios.precio from ventas,clientes,productos,precios WHERE clientes.id=ventas.id_cliente AND precios.id_producto=productos.id AND productos.id=ventas.id_producto AND ventas.id_vendedor = :id AND confirmada='0';");
+            $sql = $con->prepare("SELECT ventas.id,clientes.nombre,clientes.telefono,productos.producto,ventas.cantidad,precios.precio from ventas,clientes,productos,precios WHERE clientes.id=ventas.id_cliente AND precios.id_producto=ventas.id_producto AND productos.id=ventas.id_producto AND precios.id_vendedor=:id AND ventas.id_vendedor = :id;");
             $sql->bindParam(":id", $id);
             $sql->execute();
             $miArray = [];
@@ -24,8 +24,7 @@
         return $miArray;
     }
 
-    function confirmarVenta($id)
-    {
+    function confirmarVenta($id){
         $retorno = false;
         try {
             $con = new PDO("mysql:host=" . $GLOBALS['servidor'] . ";dbname=" . $GLOBALS['baseDatos'], $GLOBALS['user'], $GLOBALS['pass']);
@@ -37,15 +36,28 @@
             }
             $con = null; //Cerramos la conexión
         } catch (PDOException $e) {
-            // header("location: ../php/error.php");
-            echo $e;
+            header("location: ../php/error.php");
         }
         return $retorno;
     }
 
     //PRODUCTOS
 
-
+    function obtenerListaProductos(){
+        try {
+            $con = new PDO("mysql:host=" . $GLOBALS['servidor'] . ";dbname=" . $GLOBALS['baseDatos'], $GLOBALS['user'], $GLOBALS['pass']);
+            $sql = $con->prepare("SELECT id,producto from productos;");
+            $sql->execute();
+            $miArray = [];
+            while ($row = $sql->fetch(PDO::FETCH_ASSOC)) { //Haciendo uso de PDO iremos creando el array dinámicamente
+                $miArray[] = $row; //https://www.it-swarm-es.com/es/php/rellenar-php-array-desde-while-loop/972445501/
+            }
+            $con = null; //Cerramos la conexión
+        } catch (PDOException $e) {
+            header("location: ../php/error.php");
+        }
+        return $miArray;
+    }
 
 
     function obtenerProducto($id){
@@ -80,7 +92,7 @@
     }
 
     function insertarProducto($id_vendedor,$id_producto,$cantidad,$precio){
-        
+        $retorno = false;
         try {
             $con = new PDO("mysql:host=" . $GLOBALS['servidor'] . ";dbname=" . $GLOBALS['baseDatos'], $GLOBALS['user'], $GLOBALS['pass']);
             $sql = $con->prepare("INSERT into precios values(null, :id_vendedor , :id_producto , :cantidad , :precio)");
@@ -94,11 +106,11 @@
             if ($id == 0) {
                 echo "Datos incorrectos";
             }
+            $retorno=true;
         } catch (PDOException $e) {
-            // header("location: ../php/error.php");
-            echo $e;
+            header("location: ../php/error.php");
         }
-
+        return $retorno;
     }
 
     function editarProducto($id, $cantidad, $precio)

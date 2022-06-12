@@ -62,88 +62,17 @@
     </header>
 
     <section>
-    <article class="d-flex justify-content-around align-items-center fondo">
+        <article class="text-center">
             <h3 class="tamano text-center">Empieza a vender</h3>
+            <p class="text-center mb-5">Por motivos de seguridad ECO-localización necesita pruebas de que dispones de un huerto urbano</p>
         </article>
         <article>
             <div class="container mb-5">
                 <div class="row">
                     <div class="col-3"></div>
                     <div class="col-6">
-                        <form action="registrar.php" method="POST" enctype="multipart/form-data" id="formRegistro">
+                        <form action="../index.php" method="POST" enctype="multipart/form-data" id="formRegistro">
                             <table>
-                                <tr>
-                                    <td>
-                                        <label for="nombre">Nombre</label>
-                                    </td>
-                                    <td>
-                                        <input type="text" name="nombre" id="nombre" required>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label for="apellidos">Apellidos</label>
-                                    </td>
-                                    <td>
-                                        <input type="text" name="apellidos" id="apellidos" required>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label for="dni">DNI</label>
-                                    </td>
-                                    <td>
-                                        <input type="text" name="dni" id="dni" required>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label for="correo">Correo</label>
-                                    </td>
-                                    <td>
-                                        <input type="email" name="correo" id="correo" required>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label for="telefono">Telefono</label>
-                                    </td>
-                                    <td>
-                                        <input type="tel" name="telefono" id="telefono" length="9" required>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label for="ciudad">Ciudad</label>
-                                    </td>
-                                    <td>
-                                        <input type="text" name="ciudad" id="ciudad" required>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label for="localidad">Localidad</label>
-                                    </td>
-                                    <td>
-                                        <input type="text" name="localidad" id="localidad" required>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label for="direccion">Direccion</label>
-                                    </td>
-                                    <td>
-                                        <input type="text" name="direccion" id="direccion" required>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label for="cp">Codigo postal</label>
-                                    </td>
-                                    <td>
-                                        <input type="text" name="cp" id="cp" required>
-                                    </td>
-                                </tr>
                                 <tr>
                                     <td>
                                         <label for="certificado">Certificado</label>
@@ -154,7 +83,7 @@
                                 </tr>
                                 <tr>
                                     <td colspan="2">
-                                        <input class="botones" type="submit" value="Enviar">
+                                        <input class="botones" type="submit" value="Enviar" onClick="envio();">
                                     </td>
                                 </tr>
                             </table>
@@ -164,8 +93,13 @@
             </div>
         </article>
     </section>
+    <script>
+        function envio() {
+           alert("Nos pondremos en contacto con usted tras contrastar su datos");
+        }
+    </script>
 
-    <footer class="d-flex text-white cabecera">
+    <footer class="d-flex pie text-white cabecera">
         <div class="container-fluid py-3">
             <div class="row justify-content-around align-items-center text-center">
 

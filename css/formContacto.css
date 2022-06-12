@@ -2,7 +2,6 @@
     font-size: 3rem;
     font-weight: lighter;
     margin-top: 4%;
-    margin-bottom: 4%;
 }
 
 table {
@@ -40,5 +39,12 @@ textarea{
 }
 
 input[type=text],input[type=password],input[type=email],input[type=tel]{
+    width: 100%;
+}
+
+.pie {
+    position: fixed;
+    left: 0;
+    bottom: 0;
     width: 100%;
 }

@@ -96,7 +96,15 @@
                     <p>Para ser vendedor deberas ponerte en contacto con nosotros y demostrar que tienes los medios para serlo. Deberás rellenar un formulario y enviarnos 
                     la documentación que se pide. En ECO-localización llevamos un estricto seguimiento de nuestros vendedores y de su fiabilidad para nuestros clientes queden satisfechos 
                     y podamos solucionar rápida y efectivamente los posibles problemas que puedan surgir.</p>
-                      <a href='nuevoVendedor/nuevoVendedor.php' class='btn btn-default boton rounded-pill mb-3' aria-current='page'>Empieza a vender tus productos</a>
+                    <?php
+                        // Continuar la sesión
+
+                        if(isset($_SESSION['sesion_iniciada']) == true ){
+                            echo "<a href='nuevoVendedor/nuevoVendedor.php' class='btn btn-default boton rounded-pill mb-3' aria-current='page'>Empieza a vender tus productos</a>";
+                        }else{
+                            echo "<a href='registro/index.php' class='btn btn-default boton rounded-pill mb-3' aria-current='page'>Debes estar resgistrado para poder convertirte en vendedor</a>";
+                        }
+                    ?>
                 </div>
             </div>
         </article>

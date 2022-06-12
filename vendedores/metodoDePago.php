@@ -107,7 +107,7 @@
                             </tr>
                             <?php include_once "operacionesGenerales.php";
                                         echo "<tr>";
-                                            echo "<td><input class='botonComprar' type='submit' value='Comprar'></td>";
+                                            echo "<td><input class='botonComprar' type='submit' value='Comprar' onClick='envio();'></td>";
                                             echo "<td class='text-center py-5'><a class='botonComprar' href='index.php'>Cancelar</a></td>";
                                         echo "</tr>";
                                     echo "</table>";
@@ -119,6 +119,11 @@
             </div>
         </article>
     </section>
+    <script>
+        function envio() {
+           alert("Compra realizada. El vendedor se pondrá en contacto con usted");
+        }
+    </script>
     
     <footer class="d-flex text-white pie cabecera piePag">
         <div class="container-fluid py-3">

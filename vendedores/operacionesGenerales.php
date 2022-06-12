@@ -36,8 +36,7 @@
             }
             $retorno=true;
         } catch (PDOException $e) {
-            // header("location: ../php/error.php");
-            echo $e;
+            header("location: ../php/error.php");
         }
         return $retorno;
 

@@ -20,7 +20,7 @@
     <!-- links css -->
     <link rel="stylesheet" href="../css/headers.css">
     <link rel="stylesheet" href="../css/vendedores.css">
-    <title>Registro</title>
+    <title>Vendedores</title>
 </head>
 
 <body>
@@ -65,9 +65,10 @@
         <article class="d-flex justify-content-around align-items-center py-5 mapa">
             <div class="d-block">
                 <h3 class="tamano mb-5">Introduce código postal</h3>
-                <form class="d-flex justify-content-around mt-5" action="vendedores.php" method="POST" enctype="multipart/form-data" id="formRegistro">
-                    <input type="number" name="cp" id="cp" max="99999" required>
-                    <input class="botones py-1" type="submit" value="Buscar">   
+                <form class="mt-5" action="vendedores.php" method="POST">
+                    <input class="form-control" type="number" name="cp" id="cp" min="10000" max="99999" required>
+                    <br>
+                    <input class="form-control" type="submit" value="Buscar">   
                 </form>
             </div>
         </article>

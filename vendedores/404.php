@@ -19,8 +19,9 @@
 
     <!-- links css -->
     <link rel="stylesheet" href="../css/headers.css">
-    <link rel="stylesheet" href="../css/formContacto.css">
-    <title>Registro</title>
+    <link rel="stylesheet" href="../css/contacto.css">
+    <link rel="stylesheet" href="../css/error.css">
+    <title>Vendedores</title>
 </head>
 
 <body>
@@ -30,7 +31,7 @@
         </a>
 
         <ul class="nav nav-pills mt-4">
-            <li class="nav-item"><a href="../index.php" class="nav-link text-white">Inicio</a></li>
+            <li class="nav-item"><a href="index.php" class="nav-link text-white">Inicio</a></li>
             <li class="nav-item"><a href="../vendedores/index.php" class="nav-link text-white">Vendedores</a></li>
             <?php
                 // Continuar la sesión
@@ -60,15 +61,14 @@
             ?>
         </ul>
     </header>
+    
 
-    <section>
-        <article class="d-flex justify-content-around align-items-center mapa">
-            <h3 class="tamano">No se ha encontrado ningún vendedor en esa zona</h3>
-            <a href="index.php">Buscar de nuevo</a>
-        </article>
+    <section class="container text-center">
+        <h3 class="tamano text-center">No se ha encontrado ningún vendedor en esta zona</h3>
+        <a href="index.php" class="text-center botonComprar">Volver a buscar</a>
     </section>
-
-    <footer class="d-flex text-white cabecera">
+    
+    <footer class="d-flex text-white cabecera piePag">
         <div class="container-fluid py-3">
             <div class="row justify-content-around align-items-center text-center">
 

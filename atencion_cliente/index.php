@@ -20,7 +20,7 @@
     <!-- links css -->
     <link rel="stylesheet" href="../css/headers.css">
     <link rel="stylesheet" href="../css/gestiones.css">
-    <title>Registro</title>
+    <title>Atención al cliente</title>
 </head>
 
 <body>

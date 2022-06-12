@@ -12,25 +12,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Calligraffitti&display=swap" rel="stylesheet">
 
     <!-- link para iconos -->
-    <link rel="stylesheet" href="../fontawesome-free-5.15.4-web/css/all.min.css">
+    <link rel="stylesheet" href="fontawesome-free-5.15.4-web/css/all.min.css">
 
     <!-- bootstrap -->
     <link rel="stylesheet" href="../css/bootstrap.min.css">
 
     <!-- links css -->
     <link rel="stylesheet" href="../css/headers.css">
-    <link rel="stylesheet" href="../css/gestiones.css">
-    <title>Productos</title>
+    <link rel="stylesheet" href="../css/contacto.css">
+    <link rel="stylesheet" href="../css/error.css">
+    <title>Comprar</title>
 </head>
 
 <body>
-<header class="d-flex flex-wrap justify-content-center py-3 cabecera">
+    <header class="d-flex flex-wrap justify-content-center py-3 cabecera">
         <a href="../index.php" class="me-md-auto ms-5">
             <img src="../img/Captura-removebg-preview.png" class="logo">
         </a>
 
         <ul class="nav nav-pills mt-4">
-            <li class="nav-item"><a href="../index.php" class="nav-link text-white">Inicio</a></li>
+            <li class="nav-item"><a href="index.php" class="nav-link text-white">Inicio</a></li>
             <li class="nav-item"><a href="../vendedores/index.php" class="nav-link text-white">Vendedores</a></li>
             <?php
                 // Continuar la sesión
@@ -39,8 +40,8 @@
                 if(isset($_SESSION['sesion_iniciada']) == true ){
                     $tipo = session_id();
                     if($tipo=="vendedor"){
-                        echo "<li class='nav-item'><a href='ventas.php' class='nav-link text-white'>Ventas</a></li>";
-                        echo "<li class='nav-item'><a href='index.php' class='nav-link text-white'>Administrar productos</a></li>";
+                        echo "<li class='nav-item'><a href='../administracion_productos/ventas.php' class='nav-link text-white'>Ventas</a></li>";
+                        echo "<li class='nav-item'><a href='../administracion_productos/index.php' class='nav-link text-white'>Administrar productos</a></li>";
                     }
                     if($tipo=="administrador"){
                         echo "<li class='nav-item dropdown'>";
@@ -60,81 +61,60 @@
             ?>
         </ul>
     </header>
+    
 
-    <section>
-        <?php include "operacionesGenerales.php";
-            if (count($_POST) > 0) {
-                //comprobación
-                if($_POST["cantidad"]=="" || $_POST["precio"]==""){
-                    
-                    echo "Debe rellenar todos los campos";
-
-                }else{
-                    $cumplido=insertarProducto($_SESSION['id'], $_POST["seleccionProducto"], $_POST["cantidad"], $_POST["precio"]);
-                    if ($cumplido==true) {
-
-                        header("Location: index.php");
-
-                    } else {
-
-                        $error = "Datos incorrectos o no se ha actualizado nada";
-                        
-                    }
-
-                }
-                
-
-            }
-        ?>
-        <article>
-            <div class="container">
-                <h3 class="mb-3 text-center mt-5">Información</h3>
-                <form class="needs-validation form-register" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST" enctype="multipart/form-data" id="formRegistro" novalidate>
-                    <table>
-                        <tr>
-                            <td>
-                                <label for="producto">Producto</label>
-                            </td>
-                            <td>
-                                <select class="form-control" name="seleccionProducto" id="seleccionProducto">
-                                    <?php
-                                        $listaProductos=obtenerListaProductos();
-                                        for ($i=0;$i<sizeof($listaProductos);$i++){
-                                            echo '<option value="'.$listaProductos[$i]['id'].'">'.$listaProductos[$i]['producto'].'</option>';
-                                            
+    <section class="container text-center">
+        <article">
+            <div class="row">
+                <h3 class="mb-3 text-center mt-5">Elige tu compra</h3>
+                <div>
+                    <!-- Obtener todas -->
+                    <table class="d-flex justify-content-center fixed_headers mt-5">
+                        <form class="needs-validation form-register" action="metodoDePago.php" method="POST" enctype="multipart/form-data" id="formRegistro" novalidate>
+                            <?php include_once "operacionesGenerales.php";
+                                if (count($_GET) > 0) {
+                                    $id = $_GET["varId"];
+                                    $producto = obtenerProductos($id);
+                                } else {
+                                    $id = $_POST["id"];
+                                    $producto = obtenerProductos($id);
+                                }
+                                echo "<input type='hidden' name='id' value='".$id."'>";
+                                echo "<tr>";
+                                    echo "<td class='d-flex align-items-center'>Producto</td>";
+                                    echo "<td>";
+                                    echo "<select class='form-control' name='producto' id='producto'>";
+                                            for ($i=0;$i<sizeof($producto);$i++){
+                                                echo '<option value="'.$producto[$i]['producto'].'">'.$producto[$i]['producto'].'</option>'; 
+                                            }
+                                    echo "</select><br>";
+                                echo "</td>";
+                                echo "</tr>";
+                                echo "<tr>";
+                                    echo "<td class='d-flex align-items-center'>Cantidad</td>";
+                                    echo "<td><input type='number' class='form-control' name='cantidad' placeholder='Cantidad' min='1' required><br></td>";
+                                echo "</tr>";
+                                echo "<tr>";
+                                    echo "<td colspan='2'><input class='form-control' type='submit' value='Comprar'></td>";
+                                echo "</tr>";
+                                if (isset($_POST["seleccionProducto"])) {
+                                    $seleccion=$_REQUEST['seleccionProducto'];
+                                    $cantidadProducto=cantidadProducto($id,$seleccion);
+                                    if (isset($_POST["cantidad"])) {
+                                        if ($_REQUEST["cantidad"]>$cantidadProducto){
+                                            echo "<p class='text-center'>El vendedor solo tiene ".$cantidadProducto." unidades de ese producto";
                                         }
-                                    ?>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="cantidad">Cantidad</label>
-                            </td>
-                            <td>
-                                <input type="number" class="form-control" name="cantidad" placeholder="Cantidad" required>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="precio">Precio</label>
-                            </td>
-                            <td>
-                                <input type="number" class="form-control" name="precio" placeholder="Precio" required>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">
-                                <input type="submit" value="Añadir">
-                            </td>
-                        </tr>
+                                    }
+                                }  
+                            ?>
+                        </form>
                     </table>
-                </form>
+                </div>
             </div>
         </article>
     </section>
-
-    <footer class="d-flex text-white cabecera position-absolute bottom-0 end-0 w-100">
+    
+    <footer class="d-flex text-white cabecera piePag">
         <div class="container-fluid py-3">
             <div class="row justify-content-around align-items-center text-center">
 

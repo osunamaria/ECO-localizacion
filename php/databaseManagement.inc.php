@@ -1,10 +1,8 @@
 <?php
 $servidor = "localhost";
-$baseDatos = "cleanvibes";
-$usuario = "root";
+$baseDatos = "eco-localizacion";
+$user = "root";
 $pass = "";
-
-//Funciones
 
 
 ?>

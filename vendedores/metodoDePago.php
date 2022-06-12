@@ -12,25 +12,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Calligraffitti&display=swap" rel="stylesheet">
 
     <!-- link para iconos -->
-    <link rel="stylesheet" href="../fontawesome-free-5.15.4-web/css/all.min.css">
+    <link rel="stylesheet" href="fontawesome-free-5.15.4-web/css/all.min.css">
 
     <!-- bootstrap -->
     <link rel="stylesheet" href="../css/bootstrap.min.css">
 
     <!-- links css -->
     <link rel="stylesheet" href="../css/headers.css">
-    <link rel="stylesheet" href="../css/gestiones.css">
-    <title>Productos</title>
+    <link rel="stylesheet" href="../css/metodoPago.css">
+    <title>Comprar</title>
 </head>
 
 <body>
-<header class="d-flex flex-wrap justify-content-center py-3 cabecera">
+    <header class="d-flex flex-wrap justify-content-center py-3 cabecera">
         <a href="../index.php" class="me-md-auto ms-5">
             <img src="../img/Captura-removebg-preview.png" class="logo">
         </a>
 
         <ul class="nav nav-pills mt-4">
-            <li class="nav-item"><a href="../index.php" class="nav-link text-white">Inicio</a></li>
+            <li class="nav-item"><a href="index.php" class="nav-link text-white">Inicio</a></li>
             <li class="nav-item"><a href="../vendedores/index.php" class="nav-link text-white">Vendedores</a></li>
             <?php
                 // Continuar la sesión
@@ -39,8 +39,8 @@
                 if(isset($_SESSION['sesion_iniciada']) == true ){
                     $tipo = session_id();
                     if($tipo=="vendedor"){
-                        echo "<li class='nav-item'><a href='ventas.php' class='nav-link text-white'>Ventas</a></li>";
-                        echo "<li class='nav-item'><a href='index.php' class='nav-link text-white'>Administrar productos</a></li>";
+                        echo "<li class='nav-item'><a href='../administracion_productos/ventas.php' class='nav-link text-white'>Ventas</a></li>";
+                        echo "<li class='nav-item'><a href='../administracion_productos/index.php' class='nav-link text-white'>Administrar productos</a></li>";
                     }
                     if($tipo=="administrador"){
                         echo "<li class='nav-item dropdown'>";
@@ -61,50 +61,66 @@
         </ul>
     </header>
 
-    <section>
+    <section class="container text-center">
+        
         <article">
             <div class="row">
-                <h3 class="mb-3 text-center mt-5">Tus productos</h3>
+                <h3 class="mb-3 text-center mt-5">Tu compra</h3>
                 <div>
-                    <!-- Obtener todas -->
-                    <table class="fixed_headers mt-5">
-                        <thead>
-                            <tr>
-                                <th>Producto</th>
-                                <th>Cantidad</th>
-                                <th>Precio</th>
-                                <th>Editar</th>
-                                <th>Eliminar</th>
-                            </tr>
-                        </thead>
-                        <tbody>
+                    <table class="d-flex justify-content-center mt-5">
+                        <form class="needs-validation form-register" action="insertarCompra.php" method="POST" enctype="multipart/form-data" id="formRegistro" novalidate>
                             <?php include_once "operacionesGenerales.php";
-
-                                $producto = obtenerProductos($_SESSION['id']);
-                        
-                                for ($i=0;$i<sizeof($producto);$i++){
-                                    echo "<tr>";
-                                        echo "<td>".$producto[$i]['producto']."</td>";
-                                        echo "<td>".$producto[$i]['cantidad']."</td>";
-                                        echo "<td>".$producto[$i]['precio']."</td>";
-                                        echo "<td><a href='editarProducto.php?varId=".$producto[$i]["id"]."'><i class='fas fa-edit'></i></a></td>";
-                                        echo "<td><a href='eliminarProducto.php?varId=".$producto[$i]["id"]."'><i class='fas fa-trash-alt'></i></a></td>";
-                                    echo "</tr>";
-                                }
+                                $id=$_POST['id'];
+                                $producto=$_POST['producto'];
+                                $cantidad=$_POST['cantidad'];
+                                $precioProducto=obtenerPrecio($id,$producto);
+                                $id_producto=obtenerIdProducto($producto);
+                                echo "<input type='hidden' name='id_vendedor' value='".$id."'>";
+                                echo "<input type='hidden' name='id_cliente' value='".$_SESSION['id']."'>";
+                                echo "<input type='hidden' name='id_producto' value='".$id_producto['id']."'>";
+                                echo "<input type='hidden' name='cantidad' value='".$cantidad."'>";
+                                echo "<div class='mb-5'>";
+                                    echo "<table class='mb-2'>";
+                                        echo "<tr>";
+                                            if($cantidad>1){
+                                                echo "<td class='text-center' colspan='2'>".$cantidad." ".$producto."s por ".($cantidad*$precioProducto['precio'])."&#8364</td>";
+                                            }else{
+                                                echo "<td class='text-center' colspan='2'>1 ".$producto." por ".$precioProducto['precio']."&#8364</td>";
+                                            }
+                                        echo "</tr>";
+                                        echo "<tr>";
+                                            echo "<td colspan='2'><hr></td>";
+                                        echo "</tr>";
+                                        
                             ?>
-                        </tbody>
+                            <tr>
+                                <td colspan="2" class="py-2"><br></td>
+                            </tr>
+                            <tr>
+                                <td><label for="pago">Método de pago</label></td>
+                                <td>
+                                    <select class='form-control' name="pago" id="pago" class="datos">
+                                        <option value="bizum">Bizum</option>
+                                        <option value="paypal">Paypal</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <?php include_once "operacionesGenerales.php";
+                                        echo "<tr>";
+                                            echo "<td><input class='botonComprar' type='submit' value='Comprar'></td>";
+                                            echo "<td class='text-center py-5'><a class='botonComprar' href='index.php'>Cancelar</a></td>";
+                                        echo "</tr>";
+                                    echo "</table>";
+                                echo "</div>";
+                            ?>
+                        </form>
                     </table>
                 </div>
             </div>
-            <div class="container d-flex justify-content-center">
-                <?php include_once "operacionesGenerales.php";
-                    echo "<a class='text-decoration-none mt-5' href='anadirProducto.php'>Añadir <i class='fas fa-plus'></i></i></a>";
-                ?>
-            </div>
         </article>
     </section>
-
-    <footer class="d-flex text-white cabecera position-absolute bottom-0 end-0 w-100">
+    
+    <footer class="d-flex text-white pie cabecera piePag">
         <div class="container-fluid py-3">
             <div class="row justify-content-around align-items-center text-center">
 

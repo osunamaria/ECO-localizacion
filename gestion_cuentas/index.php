@@ -20,7 +20,7 @@
     <!-- links css -->
     <link rel="stylesheet" href="../css/headers.css">
     <link rel="stylesheet" href="../css/gestiones.css">
-    <title>Registro</title>
+    <title>Gestión de cuentas</title>
 </head>
 
 <body>

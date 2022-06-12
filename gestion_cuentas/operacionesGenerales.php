@@ -1,9 +1,6 @@
-<?php
+<?php include_once "../php/databaseManagement.inc.php";
 
-    $servidor = "localhost";
-    $baseDatos = "eco-localizacion";
-    $user = "root";
-    $pass = "";
+
 
     function obtenerNuevos(){
         try {

@@ -55,7 +55,7 @@
                                         <label for="usuario">Usuario</label>
                                     </td>
                                     <td>
-                                        <input type="text" name="usuario" id="usuario" required>
+                                        <input class="form-control" type="text" name="usuario" id="usuario" required>
                                         <?php?>
                                     </td>
                                 </tr>
@@ -64,7 +64,7 @@
                                         <label for="contrasena">Contrase&ntilde;a</label>
                                     </td>
                                     <td>
-                                        <input type="text" name="contrasena" id="contrasena" required>
+                                        <input class="form-control" type="text" name="contrasena" id="contrasena" required>
                                     </td>
                                 </tr>
                                 <tr>
@@ -72,7 +72,7 @@
                                         <label for="nombre">Nombre</label>
                                     </td>
                                     <td>
-                                        <input type="text" name="nombre" id="nombre" required>
+                                        <input class="form-control" type="text" name="nombre" id="nombre" required>
                                     </td>
                                 </tr>
                                 <tr>
@@ -80,7 +80,7 @@
                                         <label for="apellidos">Apellidos</label>
                                     </td>
                                     <td>
-                                        <input type="text" name="apellidos" id="apellidos" required>
+                                        <input class="form-control" type="text" name="apellidos" id="apellidos" required>
                                     </td>
                                 </tr>
                                 <tr>
@@ -88,7 +88,7 @@
                                         <label for="dni">DNI</label>
                                     </td>
                                     <td>
-                                        <input type="text" name="dni" id="dni" maxlength="9" required>
+                                        <input class="form-control" type="text" name="dni" id="dni" maxlength="9" required>
                                     </td>
                                 </tr>
                                 <tr>
@@ -96,7 +96,7 @@
                                         <label for="correo">Correo</label>
                                     </td>
                                     <td>
-                                        <input type="email" name="correo" id="correo" required>
+                                        <input class="form-control" type="email" name="correo" id="correo" required>
                                     </td>
                                 </tr>
                                 <tr>
@@ -104,7 +104,7 @@
                                         <label for="telefono">Telefono</label>
                                     </td>
                                     <td>
-                                        <input type="tel" name="telefono" id="telefono" maxlength="9" required>
+                                        <input class="form-control" type="tel" name="telefono" id="telefono" maxlength="9" required>
                                     </td>
                                 </tr>
                                 <tr>
@@ -112,7 +112,7 @@
                                         <label for="ciudad">Ciudad</label>
                                     </td>
                                     <td>
-                                        <input type="text" name="ciudad" id="ciudad" required>
+                                        <input class="form-control" type="text" name="ciudad" id="ciudad" required>
                                     </td>
                                 </tr>
                                 <tr>
@@ -120,7 +120,7 @@
                                         <label for="localidad">Localidad</label>
                                     </td>
                                     <td>
-                                        <input type="text" name="localidad" id="localidad" required>
+                                        <input class="form-control" type="text" name="localidad" id="localidad" required>
                                     </td>
                                 </tr>
                                 <tr>
@@ -128,7 +128,7 @@
                                         <label for="direccion">Direccion</label>
                                     </td>
                                     <td>
-                                        <input type="text" name="direccion" id="direccion" required>
+                                        <input class="form-control" type="text" name="direccion" id="direccion" required>
                                     </td>
                                 </tr>
                                 <tr>
@@ -136,7 +136,7 @@
                                         <label for="cp">Codigo postal</label>
                                     </td>
                                     <td>
-                                        <input type="text" name="cp" id="cp" required>
+                                        <input class="form-control" type="text" name="cp" id="cp" required>
                                     </td>
                                 </tr>
                                 <tr>
@@ -162,7 +162,7 @@
                                         <label for="usuario">Usuario</label>
                                     </td>
                                     <td>
-                                        <input type="text" name="usuario" id="usuario">
+                                        <input class="form-control" type="text" name="usuario" id="usuario">
                                     </td>
                                 </tr>
                                 <tr>
@@ -170,7 +170,7 @@
                                         <label for="contrasena">Contrase&ntilde;a</label>
                                     </td>
                                     <td>
-                                        <input type="password" name="contrasena" id="contrasena">
+                                        <input class="form-control" type="password" name="contrasena" id="contrasena">
                                     </td>
                                 </tr>
                                 <tr>

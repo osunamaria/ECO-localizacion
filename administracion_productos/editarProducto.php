@@ -117,7 +117,7 @@
                                 <label for="cantidad">Cantidad</label>
                             </td>
                             <td>
-                                <input type="text" class="form-control" name="cantidad" placeholder="Cantidad" value='<?php echo $producto["cantidad"]; ?>' required>
+                                <input type="number" class="form-control" name="cantidad" placeholder="Cantidad" value='<?php echo $producto["cantidad"]; ?>' required>
                             </td>
                         </tr>
                         <tr>
@@ -125,7 +125,7 @@
                                 <label for="precio">Precio</label>
                             </td>
                             <td>
-                                <input type="text" class="form-control" name="precio" placeholder="Precio" value='<?php echo $producto["precio"]; ?>' required><br><br>
+                                <input type="number" class="form-control" name="precio" placeholder="Precio" value='<?php echo $producto["precio"]; ?>' required><br><br>
                             </td>
                         </tr>
                         <tr>

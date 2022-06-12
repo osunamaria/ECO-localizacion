@@ -3,4 +3,5 @@
         confirmarVenta($_GET['varId']);
     }
     header("location: ventas.php");
+    //Al confirmar venta debería bajar la cantidad de producto del vendedor
 ?>

@@ -19,8 +19,8 @@
 
     <!-- links css -->
     <link rel="stylesheet" href="../css/headers.css">
-    <link rel="stylesheet" href="../css/formContacto.css">
-    <title>Registro</title>
+    <link rel="stylesheet" href="../css/mostrarVendedores.css">
+    <title>Vendedores</title>
 </head>
 
 <body>
@@ -64,15 +64,62 @@
     <section>
         <article class="d-flex justify-content-around align-items-center">
             <div class="container" id="contenedor">
-                <!-- llamar a mostrar vendedores en el cp facilitado -->
+
+
+                    <?php include_once "operacionesGenerales.php";
+                    $cp = $_POST['cp'];
+                    $vendedores = obtenerVendedores ($cp);
+                    if(sizeof($vendedores)<1){
+                        header("location: 404.php");
+                    }
+
+                    echo "<h3 class='tamano text-center mb-5'>Vendedores en el área $cp</h3>";
+
+                    for ($i=0;$i<sizeof($vendedores);$i++){
+                        echo "<div class='contenedores mb-5'>";
+                            echo "<fieldset>";
+                                echo "<legend class='text-center py-1'>".$vendedores[$i]['usuario']."</legend>";
+                                echo "<table class='mb-2'>";
+                                    echo "<tr>";
+                                        echo "<th class='text-center'><u>Productos</u></th>";
+                                        echo "<th class='text-center'><u>Cantidad</u></th>";
+                                        echo "<th class='text-center'><u>Precio/Unidad</u></th>";
+                                    echo "</tr>";
+                                    $productos=obtenerProductos($vendedores[$i]['id']);
+                                    for ($n=0;$n<sizeof($productos);$n++){
+                                        echo "<tr>";
+                                            echo "<td>".$productos[$n]['producto']."</td>";
+                                            echo "<td>".$productos[$n]['cantidad']."</td>";
+                                            echo "<td>".$productos[$n]['precio']."&#8364</td>";
+                                        echo "</tr>";
+                                    }
+                                    
+                                    if(isset($_SESSION['sesion_iniciada']) == true ){
+                                        echo "<tr>";
+                                            echo "<td class='text-center py-4' colspan='3'><a class='botonComprar' href='comprar.php?varId=".$vendedores[$i]["id"]."'>Comprar a este vendedor</a></td>";
+                                        echo "</tr>";
+                                    }
+                                    
+                                echo "</table>";
+                            echo "</fieldset>";  
+                        echo "</div>";
+                    }
+                    ?>                   
+
             </div>
         </article>
     </section>
 
-    <footer class="d-flex text-white cabecera">
+    <?php include_once "operacionesGenerales.php";
+        if(sizeof($vendedores)>2){
+            echo "<footer class='d-flex text-white cabecera'>";
+        }else{
+            echo "<footer class='pie text-white cabecera'>";
+        }
+    ?>
         <div class="container-fluid py-3">
             <div class="row justify-content-around align-items-center text-center">
-
+                
                 <div class="col-xl-4 col-sm-12">
                     <ul class="d-flex lista justify-content-around align-items-center">
                         <li><a class="text-decoration-none text-white" href="../politica/privacidad.php">Política de privacidad</a></li>

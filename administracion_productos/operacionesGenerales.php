@@ -1,16 +1,11 @@
-<?php
-
-    $servidor = "localhost";
-    $baseDatos = "eco-localizacion";
-    $user = "root";
-    $pass = "";
+<?php include_once "../php/databaseManagement.inc.php";
 
     //VENTAS
 
     function obtenerVentas($id){
         try {
             $con = new PDO("mysql:host=" . $GLOBALS['servidor'] . ";dbname=" . $GLOBALS['baseDatos'], $GLOBALS['user'], $GLOBALS['pass']);
-            $sql = $con->prepare("SELECT ventas.id,clientes.nombre,clientes.telefono,productos.producto,ventas.cantidad,precios.precio from ventas,clientes,productos,precios WHERE clientes.id=ventas.id_cliente AND precios.id_producto=ventas.id_producto AND productos.id=ventas.id_producto AND precios.id_vendedor=:id AND ventas.id_vendedor = :id;");
+            $sql = $con->prepare("SELECT ventas.id,clientes.nombre,clientes.telefono,productos.producto,ventas.cantidad,precios.precio from ventas,clientes,productos,precios WHERE clientes.id=ventas.id_cliente AND precios.id_producto=ventas.id_producto AND productos.id=ventas.id_producto AND precios.id_vendedor=:id AND ventas.id_vendedor = :id AND confirmada='0';");
             $sql->bindParam(":id", $id);
             $sql->execute();
             $miArray = [];

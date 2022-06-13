@@ -98,7 +98,6 @@
                     <div class="text-center">
                         <?php 
                             echo $error;
-                            // echo "<a href='index.php' class='text-center botonComprar'>Volver</a>";
                         ?>
                     </div>
                     <div class="d-flex justify-content-center">

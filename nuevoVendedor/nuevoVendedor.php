@@ -99,7 +99,7 @@
         }
     </script>
 
-    <footer class="d-flex pie text-white cabecera">
+    <footer class="d-flex fixed-bottom text-white cabecera">
         <div class="container-fluid py-3">
             <div class="row justify-content-around align-items-center text-center">
 

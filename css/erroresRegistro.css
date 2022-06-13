@@ -1,0 +1,27 @@
+.botonComprar{
+    text-decoration: none;
+    background-color: rgba(42,194,138);
+    padding: 5%;
+    border-bottom-left-radius: 20px 20px;
+    border-bottom-right-radius: 20px 20px;
+    border-top-left-radius: 20px 20px;
+    border-top-right-radius: 20px 20px;
+    color: black;
+}
+
+.botonComprar:hover{
+    color: white;
+}
+
+.error{
+    width: 20%;
+    margin-left: 40%;
+    padding: 2%;
+    font-size: 1.1em;
+    background-color: rgb(46,46,46);
+    color: white;
+    border-bottom-left-radius: 20px 20px;
+    border-bottom-right-radius: 20px 20px;
+    border-top-left-radius: 20px 20px;
+    border-top-right-radius: 20px 20px;
+}

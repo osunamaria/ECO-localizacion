@@ -69,7 +69,7 @@
 
     <!-- links css -->
     <link rel="stylesheet" href="../css/headers.css">
-    <link rel="stylesheet" href="../css/registro.css">
+    <link rel="stylesheet" href="../css/erroresRegistro.css">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
 
     <!-- link para iconos -->
@@ -93,12 +93,17 @@
     </header>
     <section>
         <article>
-            <div class="container d-flex justify-content-center">
+            <div class="container mt-5">
                 <div class="error">
-                    <?php 
-                        echo $error;
-                        echo "<a href='index.php' class='text-center botonComprar'>Volver</a>";
-                    ?>
+                    <div class="text-center">
+                        <?php 
+                            echo $error;
+                            // echo "<a href='index.php' class='text-center botonComprar'>Volver</a>";
+                        ?>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <a href='index.php' class='text-center botonComprar'>Volver</a>
+                    </div>
                 </div>
             </div>
         </article>

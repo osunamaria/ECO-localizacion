@@ -34,9 +34,11 @@
 
             $error = "Ese nombre de usuario ya existe.<br><br>";
 
-        }else if(!substr("TRWAGMYFPDXBNJZSQVHLCKE", $numeros%23, 1) == $letra && strlen($letra) == 1 && strlen ($numeros) == 8){
+        //Esto debería ser la comprobación del DNI, pero siempre da el DNI como malo
 
-            $error = "DNI incorrecto.<br><br>";
+        // }else if(substr("TRWAGMYFPDXBNJZSQVHLCKE", $numeros%23, 1) == $letra && strlen($letra) == 1 && strlen ($numeros) == 8){
+
+        //     $error = "DNI incorrecto.<br><br>";
 
         }else if(!strpos($correo,'.') || strpos($correo,'.')<strpos($correo,'@')){
 
@@ -90,7 +92,7 @@
 
     <!-- links css -->
     <link rel="stylesheet" href="../css/headers.css">
-    <link rel="stylesheet" href="../css/registro.css">
+    <link rel="stylesheet" href="../css/erroresRegistro.css">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
 
     <!-- link para iconos -->
@@ -114,12 +116,16 @@
     </header>
     <section>
         <article>
-            <div class="container d-flex justify-content-center">
+            <div class="container mt-5">
                 <div class="error">
-                    <?php 
-                        echo $error;
-                        echo "<a href='index.php' class='text-center botonComprar'>Volver</a>";
-                    ?>
+                    <div class="text-center">
+                        <?php 
+                            echo $error;
+                        ?>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <a href='index.php' class='text-center botonComprar'>Volver</a>
+                    </div>
                 </div>
             </div>
         </article>

@@ -101,7 +101,7 @@
         </article>
     </section>
 
-    <footer class="d-flex text-white cabecera">
+    <footer class="d-flex text-white fixed-bottom cabecera">
         <div class="container-fluid py-3">
             <div class="row justify-content-around align-items-center text-center">
 

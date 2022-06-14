@@ -73,35 +73,12 @@
             }
 
             //Comprobacion
-            if (count($_POST) > 0) {
-
-                $error = '';
-
-                //comprobación
-                if($_POST["cantidad"]=="" || $_POST["precio"]==""){
-                    
-                    echo "Debe rellenar todos los campos";
-
-                }else{
-
-                    $cumplido = editarProducto($id, $_POST["cantidad"], $_POST["precio"]);
-
-                    if ($cumplido==true) {
-
-                        header("Location: index.php");
-
-                    } else {
-
-                        $error = "Datos incorrectos o no se ha actualizado nada";
-                        
-                    }
-                }
-            }
+            
         ?>
         <article>
             <div class="container">
                 <h3 class="mb-3 text-center mt-5">Información</h3>
-                <form class="needs-validation form-register" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST" enctype="multipart/form-data" id="formRegistro" novalidate>
+                <form class="needs-validation form-register" action="confirmarEdicion.php" method="POST" enctype="multipart/form-data" id="formRegistro" novalidate>
                     <input type="hidden" name="id" value="<?php echo $producto["id"]; ?>">
                     <table>
                         <tr>

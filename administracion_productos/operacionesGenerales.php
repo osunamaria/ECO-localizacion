@@ -58,7 +58,7 @@
     function obtenerProducto($id){
         try {
             $con = new PDO("mysql:host=" . $GLOBALS['servidor'] . ";dbname=" . $GLOBALS['baseDatos'], $GLOBALS['user'], $GLOBALS['pass']);
-            $sql = $con->prepare("SELECT * from precios,productos WHERE precios.id_producto=productos.id AND precios.id = :id;");
+            $sql = $con->prepare("SELECT precios.id,precios.cantidad,precios.precio,productos.producto from precios,productos WHERE precios.id_producto=productos.id AND precios.id = :id;");
             $sql->bindParam(":id", $id); //Para evitar inyecciones SQL
             $sql->execute();
             $row = $sql->fetch(PDO::FETCH_ASSOC); //Recibimos la linea correspondiente en ROW

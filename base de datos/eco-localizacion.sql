@@ -98,8 +98,8 @@ CREATE TABLE `precios` (
 
 INSERT INTO `precios` (`id`, `id_vendedor`, `id_producto`, `cantidad`, `precio`) VALUES
 (2, 3, 2, 80, 0.9),
-(6, 3, 1, 2, 40),
-(7, 3, 3, 1, 10),
+(6, 3, 1, 2, 4),
+(7, 3, 3, 1, 1),
 (9, 3, 4, 100, 0.4),
 (13, 5, 3, 20, 3),
 (14, 5, 2, 34, 0.3),

@@ -15,4 +15,22 @@
         }
         return $miArray;
     }
+
+    function cerrarMensaje($id)
+    {
+        $retorno = false;
+        try {
+            $con = new PDO("mysql:host=" . $GLOBALS['servidor'] . ";dbname=" . $GLOBALS['baseDatos'], $GLOBALS['user'], $GLOBALS['pass']);
+            $sql = $con->prepare("UPDATE mensajes  set cerrado='1' where id=:id;");
+            $sql->bindParam(":id", $id);
+            $sql->execute();
+            if ($sql->rowCount() > 0) {
+                $retorno = true;
+            }
+            $con = null; //Cerramos la conexión
+        } catch (PDOException $e) {
+            header("location: ../php/error.php");
+        }
+        return $retorno;
+    }
 ?>

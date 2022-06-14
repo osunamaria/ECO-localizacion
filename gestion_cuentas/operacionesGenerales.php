@@ -22,7 +22,7 @@
         $retorno = false;
         try{
             $con = new PDO("mysql:host=" . $GLOBALS['servidor'] . ";dbname=" . $GLOBALS['baseDatos'], $GLOBALS['user'], $GLOBALS['pass']);
-            $sql = $con->prepare("DELETE from socios where id=:id");
+            $sql = $con->prepare("UPDATE clientes  set tipo='cliente' where id=:id;");
             $sql->bindParam(":id", $id);
             $sql->execute();
             if ($sql->rowCount() > 0){
@@ -40,7 +40,7 @@
         $retorno = false;
         try {
             $con = new PDO("mysql:host=" . $GLOBALS['servidor'] . ";dbname=" . $GLOBALS['baseDatos'], $GLOBALS['user'], $GLOBALS['pass']);
-            $sql = $con->prepare("UPDATE socios  set confirmado='1' where id=:id;");
+            $sql = $con->prepare("UPDATE clientes  set confirmado='1' where id=:id;");
             $sql->bindParam(":id", $id);
             $sql->execute();
             if ($sql->rowCount() > 0) {
